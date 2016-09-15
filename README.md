@@ -21,5 +21,6 @@ If you get permission denied error follow the below steps
 
 $ cd /var/www
 $ sudo chown -R username:username html/
+$ cd html/
 
 This will change the html folder owner from root and try again.
