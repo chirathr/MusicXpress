@@ -8,7 +8,7 @@
 
 $error = "";
 
-$connString = 'host=localhost port=5432 dbname=musicexpress user=music password=password';
+$connString = 'host=localhost port=5432 dbname=postgres user=postgres password=postgres';
 
 $conn = pg_connect($connString);
 
@@ -27,15 +27,9 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username=trim($_POST["username"]);
     $password=trim($_POST["password"]);
 
-//    if(pg_fetch_result($results, $userName, "userName")==true
-//        && pg_fetch_result($results, $password, "userName")==true) {
-//        setcookie("userIDforDV", $userName, time()+43200);
-//    }
-//    else {
-//        $error = "Your username and or password is incorrect";
-//    }
+
     $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password';";
-    $result = pg_query($conn, $sql);
+    $result = pg_query($conn, $query);
     if (!$result) {
         echo "db query error.\n";
         //exit;
@@ -44,22 +38,20 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
     $arr = pg_fetch_all($result);
 
     print_r($arr);
-
-    echo pg_num_rows($result);
     if(pg_num_rows($result) != 1) {
         // do error stuff
         $error = "Your username and or password is incorrect";
     } else {
         // user logged in
-        setcookie("userIDforDV", $userName, time()+43200);
+        setcookie("userIDforDV", $username, time()+43200);
         echo "<h1> you are logged in </h1>";
     }
 }
 
-$userName = $_COOKIE['userIDforDV'];
+$username = $_COOKIE['userIDforDV'];
 
-if(isset($userName) && $userName!="") {
-    echo "Welcome " . $userName;
+if(isset($username) && $username!="") {
+    echo "Welcome " . $username;
 }
 
 echo $error;
