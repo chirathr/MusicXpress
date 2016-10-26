@@ -1,4 +1,4 @@
-create table user(
+create table users(
       id numeric(10) primary key,
       username varchar(100) unique,
       fullname varchar(100),
@@ -6,13 +6,13 @@ create table user(
       password varchar(32)
     );
 
-create table album(
+create table albums(
       id numeric(10) primary key,
       name varchar(100),
       albumart varchar(100)
     );
 
-create table song(
+create table songs(
       id numeric(10) primary key,
       name varchar(100),
       artistname varchar(100),
@@ -21,15 +21,15 @@ create table song(
       filepath varchar(100)
     );
 
-create table rating(
-      songid numeric(10) references song(id),
-      userid numeric(10) references user(id),
+create table ratings(
+      songid numeric(10) references songs(id),
+      userid numeric(10) references users(id),
       value numeric(2)
     );
 
-create table playlist(
-      songid numeric(10) references song(id),
-      albumid numeric(10) references album(id),
+create table playlists(
+      songid numeric(10) references songs(id),
+      albumid numeric(10) references albums(id),
       name varchar(1000),
       song_order_numeber numeric(10)
     );
