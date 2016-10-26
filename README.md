@@ -38,8 +38,17 @@ $ alter user postgres with password 'postgres';
 ```
 Now connect to pgadmin using username postgres and password postgres
 
+# DDL commands to create Tables
+
+```
+$ sudo -u postgres -i
+$ psql
+```
+
+copy paste and execute all the commands in tables.sql file.
+
 # Connecting to Postgresql in PHP
-connect to psql from php using :
+Connect to psql from php using :
 
 ```
 $connString = 'host=localhost port=5432 dbname=postgres user=postgres password=postgres';
