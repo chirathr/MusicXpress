@@ -11,7 +11,7 @@ $ sudo apt-get install postgresql pgadmin3
 To connect PHP to postgresql postgresql-contrib we need to install php-pqsql
 
 ```
-$ sudo apt-get install php-pgsql
+$ sudo apt-get install php5-pgsql
 ```
 
 # Clone the repo
