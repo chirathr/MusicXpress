@@ -8,7 +8,7 @@ $ sudo apt-get install lamp-server^
 $ sudo apt-get install postgresql pgadmin3
 ```
 
-To connect PHP to postgresql postgresql-contrib we need to install php-pqsql
+To connect PHP to postgresql postgresql-contrib we need to install php5-pqsql
 
 ```
 $ sudo apt-get install php5-pgsql
@@ -19,7 +19,7 @@ $ sudo apt-get install php5-pgsql
 Change directory to the localhost folder
 ```
 $ cd /var/www/html
-$ git clone https://github.com/Chirath02/SocialNetwork.git
+$ https://github.com/Chirath02/MusicXpress.git
 ```
 If you get permission denied error follow the below steps 
 ```
@@ -38,25 +38,11 @@ $ alter user postgres with password 'postgres';
 ```
 Now connect to pgadmin using username postgres and password postgres
 
-Now you can create roles & databases using pgAdmin
+# Connecting to Postgresql in PHP
+connect to psql from php using :
 
-Start the Postgres SQL using command line
 ```
-$ sudo -u postgres -i 
-```
-Select Postgres template
-```
-$ psql template1
-```
-Create a user and assign a password to it
-```
-template1=# create user music with password 'password';
-```
-Create database named musicexpress
-```
-template1=# create database musicexpress;
-```
-Now Grant all privilages to the database
-```
-template1=# grant all privileges on database musicexpress to music;
+$connString = 'host=localhost port=5432 dbname=postgres user=postgres password=postgres';
+
+$conn = pg_connect($connString);
 ```
