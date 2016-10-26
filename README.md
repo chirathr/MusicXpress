@@ -40,22 +40,23 @@ Now connect to pgadmin using username postgres and password postgres
 
 Now you can create roles & databases using pgAdmin
 
+Start the Postgres SQL using command line
 ```
 $ sudo -u postgres -i 
 ```
-
+Select Postgres template
 ```
 $ psql template1
 ```
-
+Create a user and assign a password to it
 ```
 template1=# create user music with password 'password';
 ```
-
+Create database named musicexpress
 ```
 template1=# create database musicexpress;
 ```
-
+Now Grant all privilages to the database
 ```
 template1=# grant all privileges on database musicexpress to music;
 ```
