@@ -29,7 +29,7 @@ $ cd html/
 ```
 This will change the html folder owner from root and try again.
 
-# PgAdmin2
+# PgAdmin3
 
 Modify password for role postgres:
 ```
