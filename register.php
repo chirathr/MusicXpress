@@ -8,14 +8,14 @@
 
 $error = "";
 
-$connString = 'port=5432 dbname=musicexpress user=music password=password';
+$connString = 'host=localhost port=5432 dbname=postgres user=postgres password=postgres';
 
 $conn = pg_connect($connString);
 
-
-
-//$sql = "SELECT * FROM logins";
-//$result = pg_query($conn, $sql);
+if (!$conn) {
+    echo "Connection error.\n";
+    exit;
+}
 
 if($_SERVER["REQUEST_METHOD"] == "GET") {
     $username="";
@@ -24,32 +24,46 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
 
 else if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $username=trim($_POST["userNameLogin"]);
-    $password=trim($_POST["passwordLogin"]);
+    $username=trim($_POST["username"]);
+    $password=trim($_POST["password"]);
+    $fullname=trim($_POST["fullname"]);
+    $email=trim($_POST["email"]);
 
-//    if(pg_fetch_result($results, $userName, "userName")==true
-//        && pg_fetch_result($results, $password, "userName")==true) {
-//        setcookie("userIDforDV", $userName, time()+43200);
-//    }
-//    else {
-//        $error = "Your username and or password is incorrect";
-//    }
-    $query = "SELECT * FROM users WHERE username = '$username' AND password = md5('$password');";
+
+    $query = "SELECT id FROM users WHERE username = '$username' OR email = '$email';";
     $result = pg_query($conn, $query);
-    if(pg_num_rows($result) != 1) {
-        // do error stuff
-        $error = "Your username and or password is incorrect";
-    } else {
-        // user logged in
-        setcookie("userIDforDV", $userName, time()+43200);
+    if (!$result) {
+        echo "db query error.\n";
+        //exit;
     }
 
+    if(pg_num_rows($result) == 0) {
+        $query = "SELECT max(id) FROM users;";
+        $result = pg_query($conn, $query);
+        if (!$result) {
+            echo "db query error.\n";
+            //exit;
+        }
+        $row = pg_fetch_row($result);
+        $nextId = $row[0] + 1;
+        $query = "INSERT INTO USERS VALUES($nextId, '$username', '$fullname', '$email', '$password');";
+        $result = pg_query($conn, $query);
+        if (!$result) {
+            echo "db query error.\n";
+            //exit;
+        }
+        setcookie("userIDforDV", $username, time()+43200);
+        echo "<h1>Welcome $username, you are now logged in.</h1>";
+    }
+    else {
+        echo "<h1>User already exists !</h1>";
+    }
 }
 
-$userName = $_COOKIE['userIDforDV'];
+$username = $_COOKIE['userIDforDV'];
 
-if(isset($userName) && $userName!="") {
-    echo "Welcome " . $userName;
+if(isset($username) && $username!="") {
+    echo "Welcome " . $username;
 }
 
 echo $error;
