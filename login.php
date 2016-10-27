@@ -28,16 +28,13 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
     $password=trim($_POST["password"]);
 
 
-    $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password';";
+    $query = "SELECT id FROM users WHERE username = '$username' AND password = '$password';";
     $result = pg_query($conn, $query);
     if (!$result) {
         echo "db query error.\n";
-        //exit;
+        exit;
     }
 
-    $arr = pg_fetch_all($result);
-
-    print_r($arr);
     if(pg_num_rows($result) != 1) {
         // do error stuff
         $error = "Your username and or password is incorrect";

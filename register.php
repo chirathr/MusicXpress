@@ -34,7 +34,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = pg_query($conn, $query);
     if (!$result) {
         echo "db query error.\n";
-        //exit;
+        exit;
     }
 
     if(pg_num_rows($result) == 0) {
@@ -42,7 +42,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = pg_query($conn, $query);
         if (!$result) {
             echo "db query error.\n";
-            //exit;
+            exit;
         }
         $row = pg_fetch_row($result);
         $nextId = $row[0] + 1;
@@ -50,7 +50,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = pg_query($conn, $query);
         if (!$result) {
             echo "db query error.\n";
-            //exit;
+            exit;
         }
         setcookie("userIDforDV", $username, time()+43200);
         echo "<h1>Welcome $username, you are now logged in.</h1>";
