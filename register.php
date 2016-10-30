@@ -5,21 +5,38 @@
  * Date: 26/10/16
  * Time: 8:47 PM
  */
-
+?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Music Express - SignUp</title>
+    </head>
+    <?php include('src/static-includes.php'); ?>
+    </head>
+    <body>
+<?php
 $error = "";
 
-$connString = 'host=localhost port=5432 dbname=postgres user=postgres password=postgres';
+include('src/db-connect.php');
 
-$conn = pg_connect($connString);
+$username = $_COOKIE['userIDforDV'];
 
-if (!$conn) {
-    echo "Connection error.\n";
-    exit;
-}
-
-if($_SERVER["REQUEST_METHOD"] == "GET") {
+if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
     $username="";
     $password="";
+    echo '
+    <form action="register.php" method="POST">
+        <input name="fullname" placeholder="Full name"/>
+        <br>
+        <input name="username" placeholder="User name"/>
+        <br>
+        <input name="email" placeholder="Email Id" type="email"/>
+        <br>
+        <input name="password" placeholder ="password" type="password"/>
+        <br>
+        <input type="submit"/>
+    </form>';
 }
 
 else if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -60,8 +77,6 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$username = $_COOKIE['userIDforDV'];
-
 if(isset($username) && $username!="") {
     echo "Welcome " . $username;
 }
@@ -69,3 +84,6 @@ if(isset($username) && $username!="") {
 echo $error;
 
 ?>
+
+    </body>
+</html>
