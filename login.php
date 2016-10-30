@@ -5,6 +5,12 @@
  * Date: 26/10/16
  * Time: 8:47 PM
  */
+?>
+
+<!DOCTYPE html>
+<html lang="en">';
+
+<?php
 
 $error = "";
 
@@ -20,6 +26,21 @@ if (!$conn) {
 if($_SERVER["REQUEST_METHOD"] == "GET") {
     $username="";
     $password="";
+    $title="Music Express - SignUp";
+    include("src/static-includes.php");
+    echo '<head>
+            <meta charset="UTF-8">
+        </head>
+        <body>
+        <form action="login.php" method="POST">
+            <input name="username" placeholder="User name"/>
+            <br>
+            <input name="password" placeholder ="password" type="password"/>
+            <br>
+            <input type="submit"/>
+        </form>
+        </body>
+        </html>';
 }
 
 else if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -51,6 +72,8 @@ if(isset($username) && $username!="") {
     echo "Welcome " . $username;
 }
 
-echo $error;
-
 ?>
+
+
+
+
