@@ -15,6 +15,7 @@ $title="Music Express - login";
     <?php include("src/static-includes.php"); ?>
 </head>
 <body>
+<?php include('src/nav-bar.php'); ?>
 <?php
 
 $error = "";
