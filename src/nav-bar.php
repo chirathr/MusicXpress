@@ -18,7 +18,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Music Express</a>
+            <a class="navbar-brand" href="index.php">Music Express</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,9 +34,19 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Signup</a></li>
+                <?php
+                $username = $_COOKIE['userIDforDV'];
+
+                if(isset($username) && $username!="") {
+                    echo '<li><a href="#">' .$username . '</a></li>';
+                }
+                else {
+                    echo '
+                        <li><a href="login.php">Login</a></li>
+                        <li><a href="register.php">Signup</a></li>';
+                }
+                ?>
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
