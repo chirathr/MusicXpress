@@ -5,11 +5,16 @@
  * Date: 26/10/16
  * Time: 8:47 PM
  */
+$title="Music Express - login";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">';
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <?php include("src/static-includes.php"); ?>
+</head>
+<body>
 <?php
 
 $error = "";
@@ -23,24 +28,19 @@ if (!$conn) {
     exit;
 }
 
-if($_SERVER["REQUEST_METHOD"] == "GET") {
+$username = $_COOKIE['userIDforDV'];
+
+if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
     $username="";
     $password="";
-    $title="Music Express - SignUp";
-    include("src/static-includes.php");
-    echo '<head>
-            <meta charset="UTF-8">
-        </head>
-        <body>
+    echo '
         <form action="login.php" method="POST">
             <input name="username" placeholder="User name"/>
             <br>
             <input name="password" placeholder ="password" type="password"/>
             <br>
             <input type="submit"/>
-        </form>
-        </body>
-        </html>';
+        </form>';
 }
 
 else if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -66,13 +66,14 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$username = $_COOKIE['userIDforDV'];
-
 if(isset($username) && $username!="") {
     echo "Welcome " . $username;
 }
 
 ?>
+
+</body>
+</html>
 
 
 

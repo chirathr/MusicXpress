@@ -6,10 +6,10 @@
  * Time: 1:10 PM
  */
 ?>
-<link rel="stylesheet" href="../css/bootstrap.min.css" >
+<link rel="stylesheet" href="css/bootstrap.min.css" >
 <!-- Optional theme -->
-<link rel="stylesheet" href="../css/bootstrap-theme.min.css" >
+<link rel="stylesheet" href="css/bootstrap-theme.min.css" >
 <!-- Latest compiled and minified JavaScript -->
-<script src="../js/bootstrap.min.js" ></script>
+<script src="js/bootstrap.min.js" ></script>
 
 <title><?php echo $title ?></title>
