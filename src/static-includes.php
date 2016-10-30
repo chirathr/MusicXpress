@@ -11,5 +11,7 @@
 <link rel="stylesheet" href="css/bootstrap-theme.min.css" >
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js" ></script>
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
 
 <title><?php echo $title ?></title>
