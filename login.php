@@ -18,16 +18,7 @@ $title="Music Express - login";
 <?php
 
 $error = "";
-
-$connString = 'host=localhost port=5432 dbname=postgres user=postgres password=postgres';
-
-$conn = pg_connect($connString);
-
-if (!$conn) {
-    echo "Connection error.\n";
-    exit;
-}
-
+include("src/db-connect.php");
 $username = $_COOKIE['userIDforDV'];
 
 if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
