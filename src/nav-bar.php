@@ -38,7 +38,7 @@
                 $username = $_COOKIE['userIDforDV'];
 
                 if(isset($username) && $username!="") {
-                    echo '<li><a href="#">' .$username . '</a></li>';
+                    echo '<li><a href="#">' . ucfirst($username) . '</a></li>';
                 }
                 else {
                     echo '
