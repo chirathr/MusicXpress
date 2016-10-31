@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="css/bootstrap.min.css" >
 <!-- Optional theme -->
 <link rel="stylesheet" href="css/bootstrap-theme.min.css" >
+<!-- custom css -->
+<link rel="stylesheet" href="css/styles.css">
+
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
