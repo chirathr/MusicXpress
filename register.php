@@ -15,6 +15,9 @@
     <?php include('src/static-includes.php'); ?>
     </head>
     <body>
+    <div class="container-fluid content">
+
+
     <?php include("src/nav-bar.php"); ?>
 <?php
 $error = "";
@@ -85,6 +88,6 @@ if(isset($username) && $username!="") {
 echo $error;
 
 ?>
-
+    </div>
     </body>
 </html>

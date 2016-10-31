@@ -16,6 +16,8 @@ $title="Music Express - login";
 </head>
 <body>
 <?php include('src/nav-bar.php'); ?>
+
+<div class="container-fluid content">
 <?php
 
 $error = "";
@@ -63,7 +65,7 @@ if(isset($username) && $username!="") {
 }
 
 ?>
-
+</div>
 </body>
 </html>
 

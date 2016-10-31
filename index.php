@@ -6,9 +6,11 @@
 </head>
 <body>
 
-<?php include("src/nav-bar.php"); ?>
+    <?php include("src/nav-bar.php"); ?>
 
+    <div class="container-fluid content">
 
+    </div>
 </body>
 </html>
 
