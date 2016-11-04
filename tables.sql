@@ -28,6 +28,7 @@ create table ratings(
     );
 
 create table playlists(
+      userid numeric(10) references users(id),
       songid numeric(10) references songs(id),
       albumid numeric(10) references albums(id),
       name varchar(1000),
