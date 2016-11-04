@@ -6,10 +6,11 @@
  * Time: 11:58 AM
 */
 ?>
-<form action="login.php" method="POST">
-    <input name="username" placeholder="User name"/>
+<form action="add-playlist.php" method="POST">
+    <input name="play-list-name" placeholder="Name"/>
     <br>
-    <input name="password" placeholder ="password" type="password"/>
-    <br>
+    <?php
+        include('song-selection.php');
+    ?>
     <input type="submit"/>
 </form>
