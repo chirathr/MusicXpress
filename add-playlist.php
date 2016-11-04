@@ -30,31 +30,22 @@ $title="New Playlist";
         include("playlist/playlist-form.php");
     }
 
-    else if($_SERVER["REQUEST_METHOD"] == "POST") {
+    else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($username)) {
 
-        $username=trim($_POST["username"]);
-        $password=trim($_POST["password"]);
+        $playListName = trim($_POST["playListName"]);
+        $songList = trim($_POST["songList"]);
 
+        foreach($songList as $songId){
+            $query = "SELECT id FROM songs where id = '$songId';";
+            $result = pg_query($conn, $query);
+            if (!$result) {
+                echo "db query error.\n";
+                exit;
+            }
 
-        $query = "SELECT id FROM users WHERE username = '$username' AND password = '$password';";
-        $result = pg_query($conn, $query);
-        if (!$result) {
-            echo "db query error.\n";
-            exit;
         }
-
-        if(pg_num_rows($result) != 1) {
-            // do error stuff
-            $error = "Your username and or password is incorrect";
-        } else {
-            // user logged in
-            setcookie("userIDforDV", $username, time()+43200);
-            echo "<h1> you are logged in </h1>";
-        }
-    }
-
-    if(isset($username) && $username!="") {
-        echo "Welcome " . $username;
+    }else {
+        echo "Please log in";
     }
 
     ?>
