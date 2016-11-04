@@ -12,22 +12,22 @@ $title="New Playlist";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <?php include("../src/static-includes.php"); ?>
-</head>
+    <?php include("src/static-includes.php"); ?>
 <body>
-<?php include('../src/nav-bar.php'); ?>
+<?php include('src/nav-bar.php'); ?>
 
 <div class="container-fluid content">
     <?php
 
     $error = "";
-    include("../src/db-connect.php");
+    include("src/db-connect.php");
     $username = $_COOKIE['userIDforDV'];
 
-    if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
+    if($_SERVER["REQUEST_METHOD"] == "GET" && isset($username)) {
         $username="";
         $password="";
-        include("playlist-form.php");
+        echo "Hello";
+        include("playlist/playlist-form.php");
     }
 
     else if($_SERVER["REQUEST_METHOD"] == "POST") {

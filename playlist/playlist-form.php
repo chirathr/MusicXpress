@@ -6,7 +6,7 @@
  * Time: 11:58 AM
 */
 ?>
-<form action="add-playlist.php" method="POST">
+<form action="../add-playlist.php" method="POST"">
     <input name="play-list-name" placeholder="Name"/>
     <br>
     <?php
