@@ -27,8 +27,12 @@ if(session_id() == '') {
 
     if($_SERVER["REQUEST_METHOD"] == "GET" && isset($username)) {
         include("src/get_current_user_id.php");
-        $query = "select * from playlist where userid = '" . $userId . "';";
-        $result = pg_query($result);
+        $query = "select * from playlists where userid = '" . $userId . "';";
+        $result = pg_query($query);
+        if(!$result) {
+            echo "db query error.\n";
+            exit;
+        }
         while($playlist = pg_fetch_row($result)) {
             include("playlist/list-playlist.php");
         }
