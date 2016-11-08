@@ -7,7 +7,7 @@
 */
 ?>
 <form action="add-playlist.php" method="POST">
-    <input name="playListName" placeholder="Name"/>
+    <input name="playListName" required="true" placeholder="Name"/>
     <br>
     <?php
         include('song-selection.php');

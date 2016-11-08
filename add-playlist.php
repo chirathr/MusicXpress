@@ -31,11 +31,18 @@ $title="New Playlist";
     }
 
     else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($username)) {
-
+        $query = "select id from users where username = '" . $username . "';";
+        $result = pg_query($query);
+        if (!$result) {
+            echo "db query error.\n";
+            exit;
+        }
+        $userId = pg_fetch_row($result)[0];
+        echo $userId;
         $playListName = trim($_POST["playListName"]);
         $songList = trim($_POST["songList"]);
-        $query = 'select * from playlists where name=' . $playListName .
-            ' and  userid=(select id from users where username="'. $username . '")';
+        $query = "select * from playlists where name = '" . $playListName .
+            "' and  userid = '" . $userId . "'";
         $result = pg_query($query);
         if (!$result) {
             echo "db query error.\n";
@@ -44,7 +51,13 @@ $title="New Playlist";
         if(pg_num_rows($result) == 0) {
             if(!empty($_POST['songList'])) {
                 foreach($_POST['songList'] as $check) {
-                    
+                    $query = "insert into playlists values('" . $userId . "', '" . $check . "', '" .$playListName . "', 0)";
+                    $result = pg_query($query);
+                    if(!$result) {
+                        echo pg_last_error($conn);
+                        echo "Saving playlist failed.\n";
+                        exit;
+                    }
                 }
             }
             else
