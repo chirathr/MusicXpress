@@ -33,7 +33,7 @@ create table playlists(
     );
 
 create table playlistSongs(
-      playlist numeric(10) references playlists(id),
+      playlistid numeric(10) references playlists(id),
       userid numeric(10) references users(id),
       songid numeric(10) references songs(id),
       song_order_numeber numeric(10)

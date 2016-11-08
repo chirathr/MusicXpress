@@ -43,8 +43,7 @@ if(session_id() == '') {
         $userId = pg_fetch_row($result)[0];
         $playListName = trim($_POST["playListName"]);
         $songList = trim($_POST["songList"]);
-        $query = "select * from playlists where name = '" . $playListName .
-            "' and  userid = '" . $userId . "'";
+        $query = "select * from playlists";
         $result = pg_query($query);
         if (!$result) {
             echo "db query error.\n";
@@ -53,7 +52,22 @@ if(session_id() == '') {
         if(pg_num_rows($result) == 0) {
             if(!empty($_POST['songList'])) {
                 foreach($_POST['songList'] as $check) {
-                    $query = "insert into playlists values('" . $userId . "', '" . $check . "', '" .$playListName . "', 0)";
+                    $query = "select max(id) from playlists";
+                    $result = pg_query($query);
+                    if(!$result) {
+                        echo pg_last_error($conn);
+                        echo "query failed.\n";
+                        exit;
+                    }
+                    $nextid = pg_fetch_all($result)[0] + 1;
+                    $query = "insert into playlist values(" . $nextid .", '" . $playListName . ")";
+                    $result = pg_query($query);
+                    if(!$result) {
+                        echo pg_last_error($conn);
+                        echo "Saving playlist failed.\n";
+                        exit;
+                    }
+                    $query = "insert into playlistSongs values('" . $userId . "', '" . $check . "', '" .$playListName . "', 0)";
                     $result = pg_query($query);
                     if(!$result) {
                         echo pg_last_error($conn);
