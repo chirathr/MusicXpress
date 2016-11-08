@@ -6,6 +6,9 @@
  * Time: 8:47 PM
  */
 $title="Music Express - login";
+if(session_id() == '') {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,19 +25,23 @@ $title="Music Express - login";
 
 $error = "";
 include("src/db-connect.php");
-$username = $_COOKIE['userIDforDV'];
 
 if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
     $username="";
     $password="";
-    echo '
-        <form action="login.php" method="POST">
-            <input name="username" placeholder="User name"/>
-            <br>
-            <input name="password" placeholder ="password" type="password"/>
-            <br>
-            <input type="submit"/>
-        </form>';
+    if($_SESSION['username']){
+        $username = $_SESSION["username"];
+    }
+    else{
+    	echo '
+        	<form action="login.php" method="POST">
+            	<input name="username" placeholder="User name"/>
+            	<br>
+            	<input name="password" placeholder ="password" type="password"/>
+            	<br>
+            	<input type="submit"/>
+        	</form>';
+    }
 }
 
 else if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -55,13 +62,20 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Your username and or password is incorrect";
     } else {
         // user logged in
-        setcookie("userIDforDV", $username, time()+43200);
-        echo "<h1> you are logged in </h1>";
+	$_SESSION["username"] = $username;
+	echo "<h1> you are logged in </h1>";
     }
+}
+else{
+    if($_GET['logout'] === 'set'){
+        session_unset();
+        session_destroy();
+        header('Location: ./login.php');
+    }	
 }
 
 if(isset($username) && $username!="") {
-    echo "Welcome " . $username;
+    echo "Welcome " . $_SESSION['username'];
 }
 
 ?>
