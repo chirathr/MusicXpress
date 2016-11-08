@@ -22,26 +22,12 @@ if(session_id() == '') {
 
 <div class="container-fluid content">
     <?php
-
     $error = "";
     include("src/db-connect.php");
 
     if($_SERVER["REQUEST_METHOD"] == "GET" && isset($username)) {
-        $username="";
-        $password="";
-        if($_SESSION['username']){
-            $username = $_SESSION["username"];
-        }
-        else{
-            echo '
-        	<form action="login.php" method="POST">
-            	<input name="username" placeholder="User name"/>
-            	<br>
-            	<input name="password" placeholder ="password" type="password"/>
-            	<br>
-            	<input type="submit"/>
-        	</form>';
-        }
+        $username = $_SESSION["username"];
+
     }
 
     else {
