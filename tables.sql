@@ -28,8 +28,13 @@ create table ratings(
     );
 
 create table playlists(
+      id numeric(10) primary key,
+      name varchar(100)
+    );
+
+create table playlistSongs(
+      playlist numeric(10) references playlists(id),
       userid numeric(10) references users(id),
       songid numeric(10) references songs(id),
-      name varchar(1000),
       song_order_numeber numeric(10)
     );

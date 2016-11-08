@@ -8,7 +8,7 @@
 ?>
 <div class="col-sm-2 col-xs-4">
     <?php
-        $query = "select * from songs where id = " . $playlist[1] . ";";
+        $query = "select * from songs where id = " . $playlist[2] . ";";
         $song = pg_fetch_row(pg_query($query));
     ?>
     <div id="tile3" class="tile">
