@@ -24,12 +24,11 @@ if(session_id() == '') {
 
     $error = "";
     include("src/db-connect.php");
-    $username = $_COOKIE['userIDforDV'];
+    $username = $_SESSION['username'];
 
     if($_SERVER["REQUEST_METHOD"] == "GET" && isset($username)) {
         $username="";
         $password="";
-        echo "Hello";
         include("playlist/playlist-form.php");
     }
 
@@ -43,7 +42,7 @@ if(session_id() == '') {
         $userId = pg_fetch_row($result)[0];
         $playListName = trim($_POST["playListName"]);
         $songList = trim($_POST["songList"]);
-        $query = "select * from playlists";
+        $query = "select * from playlists where name = '" . $playListName ."'";
         $result = pg_query($query);
         if (!$result) {
             echo "db query error.\n";
@@ -59,15 +58,20 @@ if(session_id() == '') {
                         echo "query failed.\n";
                         exit;
                     }
-                    $nextid = pg_fetch_all($result)[0] + 1;
-                    $query = "insert into playlist values(" . $nextid .", '" . $playListName . ")";
+                    $row = pg_fetch_row($result)[0];
+
+                    $row =  $row + 1;
+                    $query = "insert into playlists values(" . $row .", '" . $playListName . "')";
                     $result = pg_query($query);
                     if(!$result) {
                         echo pg_last_error($conn);
                         echo "Saving playlist failed.\n";
                         exit;
                     }
-                    $query = "insert into playlistSongs values('" . $userId . "', '" . $check . "', '" .$playListName . "', 0)";
+                    echo $songList;
+                    $query = "insert into playlistSongs values('" . $row . "', '" . $userId . "', '" .$songList . "', 0)";
+                    echo $query;
+
                     $result = pg_query($query);
                     if(!$result) {
                         echo pg_last_error($conn);

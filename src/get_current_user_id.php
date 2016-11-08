@@ -5,7 +5,7 @@
  * Date: 8/11/16
  * Time: 6:28 PM
  */
-$username = $_SESSION["username"];
+$username = $_SESSION['username'];
 $query = "select id from users where username = '" . $username . "';";
 $result = pg_query($query);
 if (!$result) {
