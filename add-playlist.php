@@ -38,7 +38,6 @@ $title="New Playlist";
             exit;
         }
         $userId = pg_fetch_row($result)[0];
-        echo $userId;
         $playListName = trim($_POST["playListName"]);
         $songList = trim($_POST["songList"]);
         $query = "select * from playlists where name = '" . $playListName .
@@ -58,6 +57,8 @@ $title="New Playlist";
                         echo "Saving playlist failed.\n";
                         exit;
                     }
+                    else
+                        echo "Playlist created sucessfully";
                 }
             }
             else
