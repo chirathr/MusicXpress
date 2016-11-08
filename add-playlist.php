@@ -34,24 +34,29 @@ $title="New Playlist";
 
         $playListName = trim($_POST["playListName"]);
         $songList = trim($_POST["songList"]);
-
-        if(!empty($_POST['songList'])) {
-            foreach($_POST['songList'] as $check) {
-                $query = 'select * from playlists where name=' . $playListName .
-                    ' and  userid=(select id from users where username="'. $username . '")';
-                $result = pg_query($query);
-                if (!$result) {
-                    echo "db query error.\n";
-                    exit;
-                }
-                
-            }
+        $query = 'select * from playlists where name=' . $playListName .
+            ' and  userid=(select id from users where username="'. $username . '")';
+        $result = pg_query($query);
+        if (!$result) {
+            echo "db query error.\n";
+            exit;
         }
+        if(pg_num_rows($result) == 0) {
+            if(!empty($_POST['songList'])) {
+                foreach($_POST['songList'] as $check) {
+                    
+                }
+            }
+            else
+                echo "You haven't selected any songs";
+        }
+        else
+            echo "The playlist already exists";
+
         
     }else {
         echo "Please log in";
     }
-
     ?>
 </div>
 </body>
