@@ -35,15 +35,19 @@ $title="New Playlist";
         $playListName = trim($_POST["playListName"]);
         $songList = trim($_POST["songList"]);
 
-        foreach($songList as $songId){
-            $query = "SELECT id FROM songs where id = '$songId';";
-            $result = pg_query($conn, $query);
-            if (!$result) {
-                echo "db query error.\n";
-                exit;
+        if(!empty($_POST['songList'])) {
+            foreach($_POST['songList'] as $check) {
+                $query = 'select * from playlists where name=' . $playListName .
+                    ' and  userid=(select id from users where username="'. $username . '")';
+                $result = pg_query($query);
+                if (!$result) {
+                    echo "db query error.\n";
+                    exit;
+                }
+                
             }
-
         }
+        
     }else {
         echo "Please log in";
     }

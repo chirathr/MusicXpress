@@ -16,6 +16,7 @@
         exit;
     }
     while($row = pg_fetch_row($result)) {
-        echo '<p><input type="checkbox" name="songList[]" value="' . $row[0] . '"/> - ' . $row[1] . '</p>';
+        echo '<p><input type="checkbox" name="songList[]" value="' . $row[0] . '"/> - ' . $row[1] .
+            '<img style="height:50px; margin-left: 20px;" src="' . $row[3] . '"></p>';
     }
 ?>
