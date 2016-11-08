@@ -35,10 +35,10 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                $username = $_COOKIE['userIDforDV'];
-
+		$username = $_SESSION['username'];
                 if(isset($username) && $username!="") {
                     echo '<li><a href="#">' . ucfirst($username) . '</a></li>';
+		    echo '<li><a href="./login.php?logout=set">' . ucfirst("Log out") . '</a></li>';
                 }
                 else {
                     echo '
