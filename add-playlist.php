@@ -34,7 +34,13 @@ if(session_id() == '') {
     }
 
     else if($_SERVER["REQUEST_METHOD"] == "POST" && isset($username)) {
-        include("src/get_current_user_id.php");
+        $query = "select id from users where username = '" . $username . "';";
+        $result = pg_query($query);
+        if (!$result) {
+            echo "db query error.\n";
+            exit;
+        }
+        $userId = pg_fetch_row($result)[0];
         $playListName = trim($_POST["playListName"]);
         $songList = trim($_POST["songList"]);
         $query = "select * from playlists where name = '" . $playListName .

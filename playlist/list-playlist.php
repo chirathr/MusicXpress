@@ -13,6 +13,6 @@
     ?>
     <div id="tile3" class="tile">
         <img src="<?php if($song[3])echo $song[3]; else echo 'img/default.jpg'; ?>" class="img-responsive"/>
-        <p style="text-align:center;"><?php echo $playlist[2]; ?></p>
+        <p style="text-align:center;"><?php echo $playlist[0]; ?></p>
     </div>
 </div>
