@@ -6,6 +6,9 @@
  * Time: 11:56 AM
  */
 $title="New Playlist";
+if(session_id() == '') {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>

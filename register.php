@@ -5,6 +5,9 @@
  * Date: 26/10/16
  * Time: 8:47 PM
  */
+if(session_id() == '') {
+    session_start();
+}
 ?>
     <!DOCTYPE html>
     <html lang="en">

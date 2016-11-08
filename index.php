@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <?php include("src/static-includes.php"); ?>
+    <?php
+    if(session_id() == '') {
+        session_start();
+    }
+                                                                                                                                                                                                                                                                                                                                                                                                           include("src/static-includes.php"); ?>
 </head>
 <body>
 
