@@ -48,25 +48,29 @@ if(session_id() == '') {
             echo "db query error.\n";
             exit;
         }
+        $playlistAddFlag = 0;
         if(pg_num_rows($result) == 0) {
             if(!empty($_POST['songList'])) {
                 foreach($_POST['songList'] as $songList) {
-                    $query = "select max(id) from playlists";
-                    $result = pg_query($query);
-                    if(!$result) {
-                        echo pg_last_error($conn);
-                        echo "query failed.\n";
-                        exit;
-                    }
-                    $row = pg_fetch_row($result)[0];
+                    if($playlistAddFlag == 0) {
+                        $query = "select max(id) from playlists";
+                        $result = pg_query($query);
+                        if (!$result) {
+                            echo pg_last_error($conn);
+                            echo "query failed.\n";
+                            exit;
+                        }
+                        $row = pg_fetch_row($result)[0];
 
-                    $row =  $row + 1;
-                    $query = "insert into playlists values(" . $row .", '" . $playListName . "')";
-                    $result = pg_query($query);
-                    if(!$result) {
-                        echo pg_last_error($conn);
-                        echo "Saving playlist failed.\n";
-                        exit;
+                        $row = $row + 1;
+                        $query = "insert into playlists values(" . $row . ", '" . $playListName . "')";
+                        $result = pg_query($query);
+                        if (!$result) {
+                            echo pg_last_error($conn);
+                            echo "Saving playlist failed.\n";
+                            exit;
+                        }
+                        $playlistAddFlag++;
                     }
                     $query = "insert into playlistSongs values('" . $row . "', '" . $userId . "', '" .$songList . "', 0)";
 
