@@ -27,8 +27,7 @@ if(session_id() == '') {
 
     if($_SERVER["REQUEST_METHOD"] == "GET" && isset($username)) {
         include("src/get_current_user_id.php");
-        echo $userId;
-        $query = "select distinct name, userid, songid, song_order_numeber from playlists where userid = " . $userId . ";";
+        $query = "select * from playlists";
         $result = pg_query($query);
         if(!$result) {
             echo "db query error.\n";
@@ -38,7 +37,6 @@ if(session_id() == '') {
             include("playlist/list-playlist.php");
         }
     }
-
     else {
 
     }
