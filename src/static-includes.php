@@ -17,4 +17,4 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/bootstrap.min.js" ></script>
 
-<title><?php echo $title ?></title>
+<title><?php echo "Music Express" ?></title>
