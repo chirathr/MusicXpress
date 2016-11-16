@@ -19,6 +19,7 @@
 	    }
 	?>
     </div>
+    <?php include("src/player.php"); ?>
 </body>
 </html>
 

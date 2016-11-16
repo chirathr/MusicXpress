@@ -24,7 +24,7 @@
         $file_type=$_FILES['fileToUpload']['type'];
         $file_ext=strtolower(end(explode('.',$_FILES['fileToUpload']['name'])));
         if($file_ext !== 'mp3'){
-            echo '<script>alert("File other than .mp3 cant be uploaded.");</script>';
+            echo '<script>alert("Only .mp3 files can be uploaded.");</script>';
             exit(0);
         }
         if(empty($errors)==true){
@@ -49,6 +49,7 @@
                 $gd = (imagecreatefromstring($im));
                 $path = "img/music/".$nextId.".png";
                 imagepng($gd, $path);
+                echo 1;
                 $query = "INSERT INTO songs VALUES($nextId, '$name', '$artist' ,'$path', '$genre', '$filepath');";
                 $result = pg_query($conn, $query);
                 if (!$result) {
