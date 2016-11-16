@@ -47,7 +47,7 @@
                 $genre = $ThisFileInfo['tags']['id3v2']['genre'][0];
                 $im = $ThisFileInfo['comments']['picture'][0]['data'];
                 $gd = (imagecreatefromstring($im));
-                $path = "img/".$nextId.".png";
+                $path = "img/music/".$nextId.".png";
                 imagepng($gd, $path);
                 $query = "INSERT INTO songs VALUES($nextId, '$name', '$artist' ,'$path', '$genre', '$filepath');";
                 $result = pg_query($conn, $query);

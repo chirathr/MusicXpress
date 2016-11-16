@@ -15,7 +15,7 @@
     <div class="container-fluid content">
         <?php 
 	    if($_GET['page'] == 'music'){
-		include("src/music.php");
+		include("src/music-upload.php");
 	    }
 	?>
     </div>
