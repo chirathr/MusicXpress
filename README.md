@@ -62,3 +62,8 @@ Change the upload_max_filesize value in /etc/php5/apache2/php.ini
 ```
 upload_max_filesize = 200M
 ```
+
+# Install PHP-gd
+```
+sudo apt-get install php5-gd
+```
