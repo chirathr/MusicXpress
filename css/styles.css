@@ -17,3 +17,41 @@
     height: 60px;
     border-bottom: solid 1px #303437;
 }
+
+.side-bar-left {
+    z-index: 0;
+    margin-top: 5px;
+    position: fixed;
+    left: 0;
+    width: 70px;
+    height: 100%;
+    background-color: #303437;
+}
+
+.side-bar-right {
+    margin-top: 5px;
+    position: fixed;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    border-left: solid 1px #303437;
+}
+
+.top-left-corner {
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    width: 70px;
+    height: 60px;
+    background: #45a9ff;
+}
+
+.bottom-left-corner {
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    height: 60px;
+    background: #3f4245;
+}

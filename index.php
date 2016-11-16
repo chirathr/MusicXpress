@@ -9,8 +9,10 @@
     include("src/static-includes.php"); ?>
 </head>
 <body>
-
     <?php include("src/nav-bar.php"); ?>
+
+    <?php include("src/side-bar-left.php"); ?>
+    <?php include("src/side-bar-right.php"); ?>
 
     <div class="container-fluid content">
         <?php 

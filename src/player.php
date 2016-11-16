@@ -8,6 +8,7 @@
 ?>
 
 <div class="player-bar">
-hello
+    <div class="bottom-left-corner">
 
+    </div>
 </div>
