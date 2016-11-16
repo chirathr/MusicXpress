@@ -65,5 +65,5 @@ upload_max_filesize = 200M
 
 # Install PHP-gd
 ```
-sudo apt-get install php5-gd
+$ sudo apt-get install php5-gd
 ```
