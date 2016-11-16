@@ -14,13 +14,8 @@
     <?php include("src/side-bar-left.php"); ?>
     <?php include("src/side-bar-right.php"); ?>
 
-    <div class="container-fluid content">
-        <?php 
-	    if($_GET['page'] == 'music'){
-		include("src/music-upload.php");
-	    }
-	?>
-    </div>
+    <?php include("content.php"); ?>
+
     <?php include("src/player.php"); ?>
 </body>
 </html>
