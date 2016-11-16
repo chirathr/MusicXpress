@@ -55,3 +55,15 @@ $connString = 'host=localhost port=5432 dbname=postgres user=postgres password=p
 
 $conn = pg_connect($connString);
 ```
+
+# Increase the Upload Size Limit
+Change the upload_max_filesize value in /etc/php5/apache2/php.ini
+
+```
+upload_max_filesize = 200M
+```
+
+# Install PHP-gd
+```
+$ sudo apt-get install php5-gd
+```
