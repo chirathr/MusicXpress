@@ -10,9 +10,10 @@
 <div class="content">
     <div class="container-fluid content">
         <?php
-        if($_GET['page'] == 'music'){
+        if($_GET['p'] == 'upload-song'){
             include("src/music-upload.php");
         }
+
         ?>
     </div>
 </div>
