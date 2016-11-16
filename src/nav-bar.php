@@ -38,6 +38,7 @@
 		$username = $_SESSION['username'];
                 if(isset($username) && $username!="") {
                     echo '<li><a href="#">' . ucfirst($username) . '</a></li>';
+		    echo '<li><a href="index.php?page=music">' . ucfirst("Upload Music") . '</a></li>';
 		    echo '<li><a href="./login.php?logout=set">' . ucfirst("Log out") . '</a></li>';
                 }
                 else {
