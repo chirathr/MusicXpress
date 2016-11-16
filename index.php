@@ -5,7 +5,8 @@
     <?php
     if(session_id() == '') {
         session_start();
-    }                                                                                                                                                                       include("src/static-includes.php"); ?>
+    }                                                        
+    include("src/static-includes.php"); ?>
 </head>
 <body>
 
