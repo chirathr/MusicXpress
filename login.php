@@ -15,12 +15,19 @@ if(session_id() == '') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <?php include("src/static-includes.php"); ?>
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
 <?php include('src/nav-bar.php'); ?>
 
-<div class="container-fluid content">
 <?php
 
 $error = "";
@@ -34,13 +41,29 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
     }
     else{
     	echo '
-        	<form action="login.php" method="POST">
-            	<input name="username" placeholder="User name"/>
-            	<br>
-            	<input name="password" placeholder ="password" type="password"/>
-            	<br>
-            	<input type="submit"/>
-        	</form>';
+        	<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Music <span>Xpress</span></span></h1>
+		</div>
+		<form action="login.php" method="POST">
+			<div class="login-box animated fadeInUp">
+				<div class="box-header">
+					<h2>Log In</h2>
+				</div>
+				<label for="username">Username</label>
+				<br/>
+				<input name="username" type="text" id="username">
+				<br/>
+				<label for="password">Password</label>
+				<br/>
+				<input name="password" type="password" id="password">
+				<br/>
+				<button type="submit">Sign In</button>
+				<br/>
+				<a href="#"><p class="small">Forgot your password?</p></a>
+			</div>
+		</form>
+	</div>';
     }
 }
 
@@ -79,8 +102,25 @@ if(isset($username) && $username!="") {
 }
 
 ?>
-</div>
 </body>
+
+<script>
+    $(document).ready(function () {
+        $("input:text:visible:first").focus();
+    });
+    $('#username').focus(function() {
+        $('label[for="username"]').addClass('selected');
+    });
+    $('#username').blur(function() {
+        $('label[for="username"]').removeClass('selected');
+    });
+    $('#password').focus(function() {
+        $('label[for="password"]').addClass('selected');
+    });
+    $('#password').blur(function() {
+        $('label[for="password"]').removeClass('selected');
+    });
+</script>
 </html>
 
 
