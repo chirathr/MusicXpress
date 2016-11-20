@@ -9,6 +9,18 @@ $title="Music Express - login";
 if(session_id() == '') {
     session_start();
 }
+$username = $_SESSION["username"];
+if($_GET['logout'] === 'set'){
+    session_unset();
+    session_destroy();
+    header('Location: ./login.php');
+}
+if(isset($username) && $username!="") {
+    echo '<script>alert("You are already logged in!");
+        window.location.replace("index.php");
+    </script>';
+    die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -86,19 +98,11 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // user logged in
 	$_SESSION["username"] = $username;
-	echo "<h1> you are logged in </h1>";
+	    echo '<script>alert("Login successful!");
+            window.location.replace("index.php");
+        </script>';
+        die();
     }
-}
-else{
-    if($_GET['logout'] === 'set'){
-        session_unset();
-        session_destroy();
-        header('Location: ./login.php');
-    }	
-}
-
-if(isset($username) && $username!="") {
-    echo "Welcome " . $_SESSION['username'];
 }
 
 ?>
