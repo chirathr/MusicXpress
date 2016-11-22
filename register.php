@@ -53,19 +53,37 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
     $username="";
     $password="";
 
-
-    echo '
-    <form action="register.php" method="POST">
-        <input name="fullname" placeholder="Full name"/>
-        <br>
-        <input name="username" placeholder="User name"/>
-        <br>
-        <input name="email" placeholder="Email Id" type="email"/>
-        <br>
-        <input name="password" placeholder ="password" type="password"/>
-        <br>
-        <input type="submit"/>
-    </form>';
+    echo '<div class="container">
+		<div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Music <span>Xpress</span></span></h1>
+		</div>
+		<form action="register.php" method="POST">
+			<div class="login-box animated fadeInUp">
+				<div class="box-header">
+					<h2>SignUp In</h2>
+				</div>
+				<label for="fullname">Full Name</label>
+				<br/>
+				<input name="fullname" type="text" id="username">
+				<br/>
+				<label for="username">Username</label>
+				<br/>
+				<input name="username" type="text" id="username">
+				<br/>
+				<label for="email">Email</label>
+				<br/>
+				<input name="email" type="text" id="username">
+				<br/>
+				<label for="password">Password</label>
+				<br/>
+				<input name="password" type="password" id="password">
+				<br/>
+				<button type="submit">Sign In</button>
+				<br/>
+				<a href="#"><p class="small">Forgot your password?</p></a>
+			</div>
+		</form>
+	</div>';
 }
 
 else if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -98,21 +116,34 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "db query error.\n";
             exit;
         }
-        setcookie("userIDforDV", $username, time()+43200);
-        echo "<h1>Welcome $username, you are now logged in.</h1>";
     }
     else {
         echo "<h1>User already exists !</h1>";
     }
 }
 
-if(isset($username) && $username!="") {
-    echo "Welcome " . $username;
-}
+
 
 echo $error;
 
 ?>
-    </div>
-    </body>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("input:text:visible:first").focus();
+    });
+    $('#username').focus(function() {
+        $('label[for="username"]').addClass('selected');
+    });
+    $('#username').blur(function() {
+        $('label[for="username"]').removeClass('selected');
+    });
+    $('#password').focus(function() {
+        $('label[for="password"]').addClass('selected');
+    });
+    $('#password').blur(function() {
+        $('label[for="password"]').removeClass('selected');
+    });
+</script>
 </html>
