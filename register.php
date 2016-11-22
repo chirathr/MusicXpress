@@ -5,23 +5,43 @@
  * Date: 26/10/16
  * Time: 8:47 PM
  */
+$title="Music Express - login";
 if(session_id() == '') {
     session_start();
 }
+$username = $_SESSION["username"];
+if($_GET['logout'] === 'set'){
+    session_unset();
+    session_destroy();
+    header('Location: ./login.php');
+}
+if(isset($username) && $username!="") {
+    echo '<script>alert("You are already logged in!");
+        window.location.replace("index.php");
+    </script>';
+    die();
+}
 ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Music Express - SignUp</title>
-    </head>
-    <?php include('src/static-includes.php'); ?>
-    </head>
-    <body>
-    <div class="container-fluid content">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style_login.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
 
-    <?php include("src/nav-bar.php"); ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="nav-bar">
+
+</div>
+
 <?php
 $error = "";
 
@@ -32,6 +52,8 @@ $username = $_COOKIE['userIDforDV'];
 if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
     $username="";
     $password="";
+
+
     echo '
     <form action="register.php" method="POST">
         <input name="fullname" placeholder="Full name"/>

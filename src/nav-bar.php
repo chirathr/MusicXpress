@@ -5,7 +5,7 @@
  * Date: 30/10/16
  * Time: 1:05 PM
  */
-
+    $username = $_SESSION['username'];
 ?>
 
 <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
@@ -52,9 +52,13 @@
                 </section>
             </li>
             <li class="dropdown"><a href="index.html#" class="dropdown-toggle bg clear" data-toggle="dropdown">
-                    <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm"> <img src="images/a0.png"
-                                                                                            alt="..."> </span>
-                    John.Smith <b class="caret"></b> </a>
+                    <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm"> <img src="images/a0.png" alt="..."> </span>
+                    <?php
+                        if(isset($username) && $username!="") {
+                            echo ucfirst($username);
+                        }
+                    ?>
+
                 <ul class="dropdown-menu animated fadeInRight">
                     <li><span class="arrow top"></span> <a href="index.html#">Settings</a></li>
                     <li><a href="profile.html">Profile</a></li>
@@ -68,3 +72,17 @@
         </ul>
     </div>
 </header>
+
+<?php
+
+if(isset($username) && $username!="") {
+    echo '<li><a href="#">' . ucfirst($username) . '</a></li>';
+    echo '<li><a href="index.php?page=music">' . ucfirst("Upload Music") . '</a></li>';
+    echo '<li><a href="./login.php?logout=set">' . ucfirst("Log out") . '</a></li>';
+}
+else {
+    echo '
+                        <li><a href="login.php">Login</a></li>
+                        <li><a href="register.php">Signup</a></li>';
+}
+?>
