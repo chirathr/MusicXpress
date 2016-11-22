@@ -13,7 +13,19 @@
     <section>
         <section class="hbox stretch"> <!-- .aside -->
             <?php include("src/side-bar-left.php") ?><!-- /side bar -->
-            <?php include("content.php") ?>
+
+
+            <section id="content">
+                <section class="hbox stretch">
+                    <section>
+                        <?php include("content.php") ?>
+                    </section> <!-- side content -->
+                    <?php include("src/side-bar-right.php") ?>
+                    <a href="index.html#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open"
+                       data-target="#nav,html"></a>
+                </section>
+            </section>
+
         </section>
     </section>
 </section> <!-- Bootstrap --> <!-- App -->
