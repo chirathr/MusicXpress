@@ -13,7 +13,10 @@ $username = $_SESSION["username"];
 if($_GET['logout'] === 'set'){
     session_unset();
     session_destroy();
-    header('Location: ./login.php');
+    echo '<script>alert("Logout successfull!");
+        window.location.replace("index.php");
+    </script>';
+    die();
 }
 if(isset($username) && $username!="") {
     echo '<script>alert("You are already logged in!");
