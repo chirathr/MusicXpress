@@ -7,7 +7,6 @@
  */
     $username = $_SESSION['username'];
 ?>
-
 <header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
     <div class="navbar-header aside bg-info nav-xs"><a class="btn btn-link visible-xs"
                                                        data-toggle="class:nav-off-screen,open"
@@ -52,9 +51,10 @@
                 </section>
             </li>
             <li class="dropdown"><a href="index.html#" class="dropdown-toggle bg clear" data-toggle="dropdown">
-                    <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm"> <img src="images/a0.png" alt="..."> </span>
+
                     <?php
                         if(isset($username) && $username!="") {
+                            echo '<span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm"> <img src="images/a0.png" alt="..."> </span>';
                             echo ucfirst($username);
                         }
                         else {
@@ -90,16 +90,3 @@
         </ul>
     </div>
 </header>
-
-<?php
-
-if(isset($username) && $username!="") {
-    echo '<li><a href="#">' . ucfirst($username) . '</a></li>';
-    echo '<li><a href="index.php?page=music">' . ucfirst("Upload Music") . '</a></li>';
-    echo '<li><a href="./login.php?logout=set">' . ucfirst("Log out") . '</a></li>';
-}
-else {
-    echo '<li><a href="login.php">Login</a></li>
-          <li><a href="register.php">Signup</a></li>';
-}
-?>
