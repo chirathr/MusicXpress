@@ -57,17 +57,35 @@
                         if(isset($username) && $username!="") {
                             echo ucfirst($username);
                         }
+                        else {
+                            echo 'Login / Signup';
+                        }
                     ?>
 
                 <ul class="dropdown-menu animated fadeInRight">
-                    <li><span class="arrow top"></span> <a href="index.html#">Settings</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="index.html#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>
+                    <li><span class="arrow top"></span>
+                        <?php if(isset($username) && $username!="") {
+                            echo '<a href="index.php?page=music">Upload Music</a>';
+                        }
+                        else {
+                            echo '<a href="login.php">Login</a>';
+                        }?>
+
                     </li>
-                    <li><a href="docs.html">Help</a></li>
-                    <li class="divider"></li>
-                    <li><a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a></li>
-                </ul>
+                    <li>
+                        <?php if(isset($username) && $username!="") {
+                        }
+                        else {
+                            echo '<a href="register.php">Register</a>';
+                        }?>
+                    </li>
+
+                    <?php if(isset($username) && $username!="") {
+                        echo '<li class="divider"></li>
+                            <li><a href="./login.php?logout=set" data-toggle="ajaxModal">Log out</a></li>
+                            </ul>';
+                    }?>
+
             </li>
         </ul>
     </div>
@@ -81,8 +99,7 @@ if(isset($username) && $username!="") {
     echo '<li><a href="./login.php?logout=set">' . ucfirst("Log out") . '</a></li>';
 }
 else {
-    echo '
-                        <li><a href="login.php">Login</a></li>
-                        <li><a href="register.php">Signup</a></li>';
+    echo '<li><a href="login.php">Login</a></li>
+          <li><a href="register.php">Signup</a></li>';
 }
 ?>
