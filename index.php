@@ -12,6 +12,7 @@
     <?php include("src/nav-bar.php"); ?>
 
     <?php include("src/side-bar-left.php"); ?>
+
     <?php include("src/side-bar-right.php"); ?>
 
     <?php include("content.php"); ?>
