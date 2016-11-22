@@ -182,7 +182,8 @@
         </div>
     </section>
 
-    
+
+    <?php include("src/player.php") ?>
 
 
 </section>
