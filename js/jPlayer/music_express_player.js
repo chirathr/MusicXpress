@@ -33,12 +33,12 @@ function addSong($title, $artist, $img, $url) {
     div.innerHTML = div.innerHTML +
         '<li class="list-group-item">' +
         '<span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">' +
-        '<img src="images/a1.png" alt="..." class="img-circle">' +
+        '<img src="' + $img + '" alt="..." class="img-circle">' +
         '<i class="on b-light right sm"></i>' +
         '</span>' +
         '<div class="clear">' +
-        '<div><a href="index.html#">Chris Fox</a></div>' +
-        '<small class="text-muted">New York</small>' +
+        '<div><a href="index.html#">' + $title + '</a></div>' +
+        '<small class="text-muted">' + $artist + '</small>' +
         '</div>' +
         '</li>'
     ;
