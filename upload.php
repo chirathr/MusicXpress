@@ -57,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
 				<br/>
 				<input type="submit" value="Upload Image" name="submit">
 				<br/>
-				<a href="http://localhost/MusicXpress/index.php"><p class="small">Return</p></a>
+				<a href="index.php"><p class="small">Return</p></a>
 			</div>
 		</form>
 	</div>';
