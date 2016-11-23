@@ -21,9 +21,7 @@ function addSong($title, $artist, $img, $url) {
             audioFullScreen: false,
             play: function(e) {
                 var span = document.getElementById('song-img');
-                if($i!=0) {
-                    span.innerHTML = '';
-                }
+                span.innerHTML = '';
                 span.innerHTML = span.innerHTML + '' +
                     '<img src="' + $img_player + '" class="dker" alt="...">';
             }
@@ -90,9 +88,7 @@ $(document).ready(function(){
         audioFullScreen: false,
         play: function(e) {
             var span = document.getElementById('song-img');
-            if($i!=0) {
-                span.innerHTML = '';
-            }
+            span.innerHTML = '';
             span.innerHTML = span.innerHTML + '' +
                 '<img src="' + $img_player + '" class="dker" alt="...">';
         }

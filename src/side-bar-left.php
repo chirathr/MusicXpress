@@ -150,7 +150,7 @@
                                                                     class="dropdown-toggle"
                                                                     data-toggle="dropdown">
                         <span class="thumb-sm avatar pull-left m-l-xs" id="song-img">
-
+                            <img src="img/default/default.jpg" class="dker" alt="...">
                             <i class="on b-black"></i>
                         </span>
                         <span class="hidden-nav-xs clear"> <span class="block m-l"> <strong
