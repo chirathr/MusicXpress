@@ -62,7 +62,7 @@
                                                     </div>
                                                     <a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"><img src="' . $img . '" alt=""
                                                                                class="r r-2x img-full"></a></div>
-                                                <div class="padder-v"><a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"class="text-ellipsis">' . $row[1] .'
+                                                <div class="padder-v"><a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"class="text-ellipsis">' . substr($row[1], 0, 10) .'
                                                 </a> <a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"
                                                                     class="text-ellipsis text-xs text-muted">' . $row[2] . '</a>
                                                 </div>
