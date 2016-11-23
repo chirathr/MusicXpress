@@ -2,7 +2,7 @@ var $playlist;
 var myPlaylist;
 
 function addSong($title, $artist, $img, $url) {
-    console.log(myPlaylist.playlist);
+
     if(myPlaylist.playlist.length == 0) {
         myPlaylist = new jPlayerPlaylist({
             jPlayer: "#jplayer_N",
@@ -20,30 +20,42 @@ function addSong($title, $artist, $img, $url) {
         });
     }
 
-    myPlaylist.add({
-        title: $title,
-        artist: $artist,
-        mp3: $url,
-        poster: $img
+    var $flag = 1;
+
+    myPlaylist.playlist.forEach(function(element) {
+        if(element.title == $title) {
+            $flag = 0;
+        }
     });
-    myPlaylist.play();
 
-    var div = document.getElementById('side-bar-content');
+    console.log();
 
-    div.innerHTML = div.innerHTML +
-        '<li class="list-group-item">' +
-        '<span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">' +
-        '<img src="' + $img + '" alt="..." class="img-circle">' +
-        '<i class="on b-light right sm"></i>' +
-        '</span>' +
-        '<div class="clear">' +
-        '<div><a href="index.html#">' + $title + '</a></div>' +
-        '<small class="text-muted">' + $artist + '</small>' +
-        '</div>' +
-        '</li>'
-    ;
+    if($flag == 1) {
 
+        myPlaylist.add({
+            title: $title,
+            artist: $artist,
+            mp3: $url,
+            poster: $img
+        });
 
+        myPlaylist.play();
+
+        var div = document.getElementById('side-bar-content');
+
+        div.innerHTML = div.innerHTML +
+            '<li class="list-group-item">' +
+            '<span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">' +
+            '<img src="' + $img + '" alt="..." class="img-circle">' +
+            '<i class="on b-light right sm"></i>' +
+            '</span>' +
+            '<div class="clear">' +
+            '<div><a onclick="' + "addSong('" + $title + "', '" + $artist + "' ,'" + $img + "', '" + $url + "')" + '">' + $title + '</a></div>' +
+            '<small class="text-muted">' + $artist + '</small>' +
+            '</div>' +
+            '</li>'
+        ;
+    }
 }
 
 
