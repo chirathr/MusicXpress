@@ -9,6 +9,12 @@ $title="Music Express - Playlists";
 if(session_id() == '') {
     session_start();
 }
+if(isset($username) && $username!="") {
+    echo '<script>alert("You are already logged in!");
+        window.location.replace("index.php");
+    </script>';
+    die();
+}
 ?>
 
 <!DOCTYPE html>
