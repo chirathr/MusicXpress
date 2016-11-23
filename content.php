@@ -171,9 +171,9 @@
 
         <div class="row m-t-lg m-b-lg">
             <div class="col-sm-6">
-                <div class="bg-primary wrapper-md r"><a href="index.html#"> <span
+                <div class="bg-primary wrapper-md r"><a href="login.php#"> <span
                             class="h4 m-b-xs block"><i class=" icon-user-follow i-lg"></i> Login or Create account</span>
-                        <span class="text-muted">Save and share your playlist with your friends when you log in or create an account.</span>
+                        <span class="text-muted">Login to save the songs in one go!</span>
                     </a></div>
             </div>
             <div class="col-sm-6">
