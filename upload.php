@@ -101,8 +101,10 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $im = $ThisFileInfo['comments']['picture'][0]['data'];
                 $gd = (imagecreatefromstring($im));
                 $path = "img/music/".$nextId.".png";
+                if(!$gd){
+                    $path = "";
+                }
                 imagepng($gd, $path);
-                echo 1;
                 $query = "INSERT INTO songs VALUES($nextId, '$name', '$artist' ,'$path', '$genre', '$filepath');";
                 $result = pg_query($conn, $query);
                 if(!$result) {

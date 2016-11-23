@@ -72,7 +72,7 @@ if(session_id() == '') {
                         }
                         $playlistAddFlag++;
                     }
-                    $query = "insert into playlistSongs values('" . $row . "', '" . $userId . "', '" .$songList . "', 0)";
+                    $query = "insert into playlistSongs values(" . $row . ", " . $userId . ", " .$songList . ", 0)";
 
                     $result = pg_query($query);
                     if(!$result) {
