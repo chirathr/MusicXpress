@@ -115,13 +115,14 @@
                                             <div class="item">
                                                 <div class="pos-rlt">
                                                     <div class="item-overlay opacity r r-2x bg-black">
-                                                        <div class="center text-center m-t-n"><a href="index.html#"><i
+                                                        <div class="center text-center m-t-n"><a 
+                                                        onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $row[3] . "', '" . $row[5] . "')" . '"><i
                                                                     class="fa fa-play-circle i-2x"></i></a></div>
                                                     </div>
-                                                    <a href="index.html#"><img src="' . $row[3] . '" alt=""
+                                                    <a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $row[3] . "', '" . $row[5] . "')" . '"><img src="' . $row[3] . '" alt=""
                                                                                class="r r-2x img-full"></a></div>
-                                                <div class="padder-v"><a href="index.html#" class="text-ellipsis">' . $row[1] .'
-                                                </a> <a href="index.html#"
+                                                <div class="padder-v"><a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $row[3] . "', '" . $row[5] . "')" . '"class="text-ellipsis">' . $row[1] .'
+                                                </a> <a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $row[3] . "', '" . $row[5] . "')" . '"
                                                                     class="text-ellipsis text-xs text-muted">' . $row[2] . '</a>
                                                 </div>
                                             </div>

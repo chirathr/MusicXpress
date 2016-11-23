@@ -37,9 +37,6 @@ if(session_id() == '') {
             include("playlist/list-playlist.php");
         }
     }
-    else {
-
-    }
     ?>
 </div>
 </body>
