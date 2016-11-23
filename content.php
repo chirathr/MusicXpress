@@ -177,9 +177,9 @@
                     </a></div>
             </div>
             <div class="col-sm-6">
-                <div class="bg-black wrapper-md r"><a href="index.html#"> <span
-                            class="h4 m-b-xs block"><i class="icon-cloud-download i-lg"></i> Download our app</span>
-                        <span class="text-muted">Get the apps for desktop and mobile to start listening music at anywhere and anytime.</span>
+                <div class="bg-black wrapper-md r"><a href="upload.php#"> <span
+                            class="h4 m-b-xs block"><i class="icon-cloud-download i-lg"></i> Upload</span>
+                        <span class="text-muted">Uploadmusic and share your creativity with the world</span>
                     </a></div>
             </div>
         </div>
