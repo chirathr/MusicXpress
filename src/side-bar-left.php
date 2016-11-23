@@ -148,9 +148,11 @@
             <div class="bg hidden-xs ">
                 <div class="dropdown dropup wrapper-sm clearfix"><a href="index.html#"
                                                                     class="dropdown-toggle"
-                                                                    data-toggle="dropdown"> <span
-                            class="thumb-sm avatar pull-left m-l-xs"> <img src="images/a3.png" class="dker"
-                                                                           alt="..."> <i class="on b-black"></i> </span>
+                                                                    data-toggle="dropdown">
+                        <span class="thumb-sm avatar pull-left m-l-xs" id="song-img">
+
+                            <i class="on b-black"></i>
+                        </span>
                         <span class="hidden-nav-xs clear"> <span class="block m-l"> <strong
                                     class="font-bold text-lt">John.Smith</strong> <b
                                     class="caret"></b> </span> <span class="text-muted text-xs block m-l">Art Director</span> </span>

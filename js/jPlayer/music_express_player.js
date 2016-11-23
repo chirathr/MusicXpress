@@ -1,9 +1,10 @@
 var $playlist;
 var myPlaylist;
 var $i = 0;
+var $img_player;
 
 function addSong($title, $artist, $img, $url) {
-
+    $img_player = $img;
     if(myPlaylist.playlist.length == 0) {
         myPlaylist = new jPlayerPlaylist({
             jPlayer: "#jplayer_N",
@@ -17,7 +18,15 @@ function addSong($title, $artist, $img, $url) {
             supplied: "webmv, ogv, m4v, oga, mp3",
             smoothPlayBar: true,
             keyEnabled: true,
-            audioFullScreen: false
+            audioFullScreen: false,
+            play: function(e) {
+                var span = document.getElementById('song-img');
+                if($i!=0) {
+                    span.innerHTML = '';
+                }
+                span.innerHTML = span.innerHTML + '' +
+                    '<img src="' + $img_player + '" class="dker" alt="...">';
+            }
         });
     }
 
@@ -78,7 +87,15 @@ $(document).ready(function(){
         supplied: "webmv, ogv, m4v, oga, mp3",
         smoothPlayBar: true,
         keyEnabled: true,
-        audioFullScreen: false
+        audioFullScreen: false,
+        play: function(e) {
+            var span = document.getElementById('song-img');
+            if($i!=0) {
+                span.innerHTML = '';
+            }
+            span.innerHTML = span.innerHTML + '' +
+                '<img src="' + $img_player + '" class="dker" alt="...">';
+        }
     });
 
     $(document).on($.jPlayer.event.pause, myPlaylist.cssSelector.jPlayer,  function(){
