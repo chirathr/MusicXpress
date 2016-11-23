@@ -1,5 +1,6 @@
 var $playlist;
 var myPlaylist;
+var $i = 0;
 
 function addSong($title, $artist, $img, $url) {
 
@@ -50,12 +51,16 @@ function addSong($title, $artist, $img, $url) {
             '<i class="on b-light right sm"></i>' +
             '</span>' +
             '<div class="clear">' +
-            '<div><a onclick="' + "addSong('" + $title + "', '" + $artist + "' ,'" + $img + "', '" + $url + "')" + '">' + $title + '</a></div>' +
+            '<div><a onclick="' + "play_song(" + $i++ + ")" + '">' + $title + '</a></div>' +
             '<small class="text-muted">' + $artist + '</small>' +
             '</div>' +
             '</li>'
         ;
     }
+}
+
+function play_song($id) {
+    myPlaylist.play($id);
 }
 
 
