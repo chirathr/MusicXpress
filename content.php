@@ -75,12 +75,6 @@
                           }
                          ?>
 
-
-
-                   
-
-
-
                 </div>
             </div>
 
@@ -98,14 +92,15 @@
                     }
                     $i=0;
                     while($row = pg_fetch_row($result)) {
+                        if($row[3]) $img = $row[3]; else $img = 'img/default/default.jpg';
 
-                        echo '<a href="index.html#" class="list-group-item clearfix">
+                        echo '<a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '" class="list-group-item clearfix">
                         <span class="pull-right h2 text-muted m-l">1</span> 
                         <span class="pull-left thumb-sm avatar m-r"> 
-                            <img src="images/a4.png" alt="..."> 
+                            <img src="' . $img . '" alt="..."> 
                         </span> 
-                        <span class="clear"> <span>Little Town</span> 
-                        <small class="text-muted clear text-ellipsis">by Chris Fox</small> 
+                        <span class="clear"> <span>' . $row[1] .'</span> 
+                        <small class="text-muted clear text-ellipsis">' . $row[2] .'</small> 
                         </span>
                     </a>';
 
