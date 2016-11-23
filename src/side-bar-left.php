@@ -14,10 +14,10 @@
                 <nav class="nav-primary hidden-xs">
                     <ul class="nav bg clearfix">
                         <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted"> Discover</li>
-                        <li><a href="index.html"> <i class="icon-disc icon text-success"></i> <span
-                                    class="font-bold">What's new</span> </a></li>
-                        <li><a href="genres.html"> <i class="icon-music-tone-alt icon text-info"></i> <span
-                                    class="font-bold">Genres</span> </a></li>
+                        <li><a onclick="showSongs();"> <i class="icon-disc icon text-success"></i> <span
+                                    class="font-bold">All Songs</span> </a></li>
+                        <li><a href="upload.php"> <i class="icon-music-tone-alt icon text-info"></i> <span
+                                    class="font-bold">Upload</span> </a></li>
                         <li><a href="events.html"> <i class="icon-drawer icon text-primary-lter"></i> <b
                                     class="badge bg-primary pull-right">6</b> <span
                                     class="font-bold">Events</span> </a></li>
@@ -172,3 +172,10 @@
         </footer>
     </section>
 </aside> <!-- /.aside -->
+
+<script>
+    function showSongs() {
+        var discover = document.getElementsByClassName();
+        discover.style.display = 'none';
+    }
+</script>

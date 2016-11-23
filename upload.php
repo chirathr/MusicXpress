@@ -55,9 +55,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
 				<br/>
 				<input type="file" name="fileToUpload" id="fileToUpload">
 				<br/>
-				<input type="submit" value="Upload Image" name="submit">
+				<input type="submit" value="Upload Song" name="submit">
 				<br/>
-				<a href="index.php"><p class="small">Return</p></a>
+				<a href="index.php"><p >Return</p></a>
 			</div>
 		</form>
 	</div>';

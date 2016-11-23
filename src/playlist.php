@@ -2,8 +2,11 @@
 	if(session_id() == '') {
 	    session_start();
 	}
+
 	include('db-connect.php');
 	$user = $_SESSION["username"];
+	if(!$user)
+		$user = 'chirath';
 	$query = "SELECT id FROM users WHERE username = '$user';";
 	$result = pg_query($conn, $query);
 	if (!$result) {
@@ -12,7 +15,7 @@
     }
     $row = pg_fetch_row($result);
     $user_id = $row[0];
-    $query = "SELECT distinct playlistid from playlistSongs where userid = '$user_id'";
+    $query = "SELECT distinct playlistid from playlistSongs where userid = " . $user_id . ";";
     $result = pg_query($conn, $query);
     if (!$result) {
         echo "db query error.\n";
