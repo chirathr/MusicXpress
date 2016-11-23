@@ -65,7 +65,7 @@
                 <ul class="dropdown-menu animated fadeInRight">
                     <li><span class="arrow top"></span>
                         <?php if(isset($username) && $username!="") {
-                            echo '<a href="index.php?page=music">Upload Music</a>';
+                            echo '<a href="upload.php">Upload Music</a>';
                         }
                         else {
                             echo '<a href="login.php">Login</a>';

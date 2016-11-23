@@ -100,7 +100,7 @@ else if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if(pg_num_rows($result) != 1) {
         // do error stuff
-        $error = "Your username and or password is incorrect";
+        echo '<script>alert("Your username and or password is incorrect");window.location.replace("login.php");</script>';
     } else {
         // user logged in
 	$_SESSION["username"] = $username;

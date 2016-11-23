@@ -12,6 +12,7 @@
 </html>
 
 <?php
+    
     include('src/db-connect.php');
     require("getid3/getid3.php");
     $getID3 = new getID3;   
