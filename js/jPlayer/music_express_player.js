@@ -2,7 +2,7 @@ var $playlist;
 var myPlaylist;
 
 function addSong($title, $artist, $img, $url) {
-    console.log(myPlaylist.playlist.length);
+    console.log(myPlaylist.playlist);
     if(myPlaylist.playlist.length == 0) {
         myPlaylist = new jPlayerPlaylist({
             jPlayer: "#jplayer_N",
@@ -27,6 +27,23 @@ function addSong($title, $artist, $img, $url) {
         poster: $img
     });
     myPlaylist.play();
+
+    var div = document.getElementById('side-bar-content');
+
+    div.innerHTML = div.innerHTML +
+        '<li class="list-group-item">' +
+        '<span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">' +
+        '<img src="images/a1.png" alt="..." class="img-circle">' +
+        '<i class="on b-light right sm"></i>' +
+        '</span>' +
+        '<div class="clear">' +
+        '<div><a href="index.html#">Chris Fox</a></div>' +
+        '<small class="text-muted">New York</small>' +
+        '</div>' +
+        '</li>'
+    ;
+
+
 }
 
 
