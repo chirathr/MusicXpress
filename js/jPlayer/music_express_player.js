@@ -2,42 +2,32 @@ var $playlist;
 var myPlaylist;
 
 function addSong($title, $artist, $img, $url) {
-    myPlaylist = new jPlayerPlaylist({
-        jPlayer: "#jplayer_N",
-        cssSelectorAncestor: "#jp_container_N"
-    }, $playlist, {
-        playlistOptions: {
-            enableRemoveControls: true,
-            autoPlay: true
-        },
-        swfPath: "js/jPlayer",
-        supplied: "webmv, ogv, m4v, oga, mp3",
-        smoothPlayBar: true,
-        keyEnabled: true,
-        audioFullScreen: false
-    });
+    console.log(myPlaylist.playlist.length);
+    if(myPlaylist.playlist.length == 0) {
+        myPlaylist = new jPlayerPlaylist({
+            jPlayer: "#jplayer_N",
+            cssSelectorAncestor: "#jp_container_N"
+        }, $playlist, {
+            playlistOptions: {
+                enableRemoveControls: true,
+                autoPlay: true
+            },
+            swfPath: "js/jPlayer",
+            supplied: "webmv, ogv, m4v, oga, mp3",
+            smoothPlayBar: true,
+            keyEnabled: true,
+            audioFullScreen: false
+        });
+    }
+
     myPlaylist.add({
         title: $title,
         artist: $artist,
         mp3: $url,
         poster: $img
     });
-    console.log($url);
     myPlaylist.play();
 }
-
-
-function addtoplaylist($title, $artist, $img, $url) {
-    myPlaylist.add({
-        title: $title,
-        artist: $artist,
-        mp3: $url,
-        poster: $img
-    });
-    console.log($url);
-    myPlaylist.play();
-}
-
 
 
 $(document).ready(function(){
