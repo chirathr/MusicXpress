@@ -10,32 +10,7 @@
 <aside class="aside-md bg-light dk" id="sidebar">
     <section class="vbox animated fadeInRight">
         <section class="w-f-md scrollable hover"><h4 class="font-thin m-l-md m-t">Connected</h4>
-            <ul class="list-group no-bg no-borders auto m-t-n-xxs">
-
-
-
-                <li class="list-group-item"><span
-                        class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm"> <img
-                            src="images/a1.png" alt="..." class="img-circle"> <i
-                            class="on b-light right sm"></i> </span>
-                    <div class="clear">
-                        <div><a href="index.html#">Chris Fox</a></div>
-                        <small class="text-muted">New York</small>
-                    </div>
-                </li>
-
-
-                <li class="list-group-item"><span
-                        class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm"> <img
-                            src="images/a2.png" alt="..."> <i class="on b-light right sm"></i> </span>
-                    <div class="clear">
-                        <div><a href="index.html#">Amanda Conlan</a></div>
-                        <small class="text-muted">France</small>
-                    </div>
-                </li>
-
-
-
+            <ul class="list-group no-bg no-borders auto m-t-n-xxs" id="side-bar-content">
 
 
             </ul>
