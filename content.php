@@ -27,66 +27,8 @@
 
 
 
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="item">
-                    <div class="pos-rlt">
-                        <div class="bottom"><span
-                                class="badge bg-info m-l-sm m-b-sm">03:20</span></div>
-                        <div class="item-overlay opacity r r-2x bg-black">
-                            <div class="text-info padder m-t-sm text-sm"><i
-                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                    class="fa fa-star-o text-muted"></i></div>
-                            <div class="center text-center m-t-n"><a href="index.html#"><i
-                                        class="icon-control-play i-2x"></i></a></div>
-                            <div class="bottom padder m-b-sm"><a href="index.html#"
-                                                                 class="pull-right"> <i
-                                        class="fa fa-heart-o"></i> </a> <a href="index.html#"> <i
-                                        class="fa fa-plus-circle"></i> </a></div>
-                        </div>
-                        <a href="index.html#"><img src="images/p1.jpg" alt=""
-                                                   class="r r-2x img-full"></a></div>
-                    <div class="padder-v"><a href="index.html#" class="text-ellipsis">Tempered
-                            Song</a> <a href="index.html#" class="text-ellipsis text-xs text-muted">Miaow</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="item">
-                    <div class="pos-rlt">
-                        <div class="item-overlay opacity r r-2x bg-black active">
-                            <div class="text-info padder m-t-sm text-sm"><i
-                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                    class="fa fa-star"></i> <i
-                                    class="fa fa-star-o text-muted"></i> <i
-                                    class="fa fa-star-o text-muted"></i></div>
-                            <div class="center text-center m-t-n"><a href="index.html#"
-                                                                     data-toggle="class"> <i
-                                        class="icon-control-play i-2x text"></i> <i
-                                        class="icon-control-pause i-2x text-active"></i> </a></div>
-                            <div class="bottom padder m-b-sm"><a href="index.html#"
-                                                                 class="pull-right active"
-                                                                 data-toggle="class"> <i
-                                        class="fa fa-heart-o text"></i> <i
-                                        class="fa fa-heart text-active text-danger"></i> </a> <a
-                                    href="index.html#" data-toggle="class"> <i
-                                        class="fa fa-plus-circle text"></i> <i
-                                        class="fa fa-check-circle text-active text-info"></i> </a>
-                            </div>
-                        </div>
-                        <a href="index.html#"><img src="images/p2.jpg" alt=""
-                                                   class="r r-2x img-full"></a></div>
-                    <div class="padder-v"><a href="index.html#" class="text-ellipsis">Vivamus
-                            vel tincidunt libero</a> <a href="index.html#"
-                                                        class="text-ellipsis text-xs text-muted">Lauren
-                            Taylor</a></div>
-                </div>
-            </div>
-
-
+            <?php include('src/playlist.php');?>
+            
         </div>
 
 
@@ -108,21 +50,20 @@
                         }
                         $i=0;
                         while($row = pg_fetch_row($result)) {
-
-
+                            if($row[3]) $img = $row[3]; else $img = 'img/default/default.jpg';
 
                             echo '<div class="col-xs-6 col-sm-3">
                                             <div class="item">
                                                 <div class="pos-rlt">
                                                     <div class="item-overlay opacity r r-2x bg-black">
                                                         <div class="center text-center m-t-n"><a 
-                                                        onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $row[3] . "', '" . $row[5] . "')" . '"><i
+                                                        onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"><i
                                                                     class="fa fa-play-circle i-2x"></i></a></div>
                                                     </div>
-                                                    <a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $row[3] . "', '" . $row[5] . "')" . '"><img src="' . $row[3] . '" alt=""
+                                                    <a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"><img src="' . $img . '" alt=""
                                                                                class="r r-2x img-full"></a></div>
-                                                <div class="padder-v"><a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $row[3] . "', '" . $row[5] . "')" . '"class="text-ellipsis">' . $row[1] .'
-                                                </a> <a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $row[3] . "', '" . $row[5] . "')" . '"
+                                                <div class="padder-v"><a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"class="text-ellipsis">' . $row[1] .'
+                                                </a> <a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"
                                                                     class="text-ellipsis text-xs text-muted">' . $row[2] . '</a>
                                                 </div>
                                             </div>
