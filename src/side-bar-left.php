@@ -14,13 +14,13 @@
                 <nav class="nav-primary hidden-xs">
                     <ul class="nav bg clearfix">
                         <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted"> Discover</li>
-                        <li><a onclick="showSongs();"> <i class="icon-disc icon text-success"></i> <span
+                        <li><a class ="clickabe" onclick="showSongs();"> <i class="icon-disc icon text-success"></i> <span
                                     class="font-bold">All Songs</span> </a></li>
                         <li><a href="upload.php"> <i class="icon-music-tone-alt icon text-info"></i> <span
                                     class="font-bold">Upload</span> </a></li>
-                        <li><a href="events.html"> <i class="icon-drawer icon text-primary-lter"></i> <b
+                        <li><a class ="clickabe"> <i class="icon-drawer icon text-primary-lter"></i> <b
                                     class="badge bg-primary pull-right">6</b> <span
-                                    class="font-bold">Events</span> </a></li>
+                                    class="font-bold">Discover</span> </a></li>
                         <li><a href="listen.html"> <i class="icon-list icon text-info-dker"></i> <span
                                     class="font-bold">Listen</span> </a></li>
                         <li><a href="video.html" data-target="#content" data-el="#bjax-el"
@@ -182,5 +182,13 @@
         top_songs.style.display = 'none';
 
         document.getElementById("new-songs").className = "col-md-12";
+    }
+
+    function discover() {
+        var discover = document.getElementById("top_songs");
+        discover.style.display = 'none';
+
+        var top_songs = document.getElementById("new-songs");
+        top_songs.style.display = 'none';
     }
 </script>
