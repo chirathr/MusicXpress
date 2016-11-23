@@ -14,9 +14,10 @@
     if (!$result) {
         echo "db query error.\n";
         exit;
-    }
+    }  
     while($row = pg_fetch_row($result)) {
+        $path = "../".$row[3];
         echo '<p><input type="checkbox" name="songList[]" value="' . $row[0] . '"/> - ' . $row[1] .
-            '<img style="height:50px; margin-left: 20px;" src="' . $row[3] . '"></p>';
+            '<img style="height:50px; margin-left: 20px;" src="' . $path . '"></p>';
     }
 ?>
