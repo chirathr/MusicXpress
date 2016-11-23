@@ -28,42 +28,7 @@
 
 
             <?php include('src/playlist.php');?>
-
-
-
-            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="item">
-                    <div class="pos-rlt">
-                        <div class="item-overlay opacity r r-2x bg-black active">
-                            <div class="text-info padder m-t-sm text-sm"><i
-                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                    class="fa fa-star"></i> <i
-                                    class="fa fa-star-o text-muted"></i> <i
-                                    class="fa fa-star-o text-muted"></i></div>
-                            <div class="center text-center m-t-n"><a href="index.html#"
-                                                                     data-toggle="class"> <i
-                                        class="icon-control-play i-2x text"></i> <i
-                                        class="icon-control-pause i-2x text-active"></i> </a></div>
-                            <div class="bottom padder m-b-sm"><a href="index.html#"
-                                                                 class="pull-right active"
-                                                                 data-toggle="class"> <i
-                                        class="fa fa-heart-o text"></i> <i
-                                        class="fa fa-heart text-active text-danger"></i> </a> <a
-                                    href="index.html#" data-toggle="class"> <i
-                                        class="fa fa-plus-circle text"></i> <i
-                                        class="fa fa-check-circle text-active text-info"></i> </a>
-                            </div>
-                        </div>
-                        <a href="index.html#"><img src="images/p2.jpg" alt=""
-                                                   class="r r-2x img-full"></a></div>
-                    <div class="padder-v"><a href="index.html#" class="text-ellipsis">Vivamus
-                            vel tincidunt libero</a> <a href="index.html#"
-                                                        class="text-ellipsis text-xs text-muted">Lauren
-                            Taylor</a></div>
-                </div>
-            </div>
-
-
+            
         </div>
 
 
