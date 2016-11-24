@@ -4,26 +4,28 @@ var $i = 0;
 var $img_player;
 
 function addSong($title, $artist, $img, $url) {
-    myPlaylist = new jPlayerPlaylist({
-        jPlayer: "#jplayer_N",
-        cssSelectorAncestor: "#jp_container_N"
-    }, $playlist, {
-        playlistOptions: {
-            enableRemoveControls: true,
-            autoPlay: true
-        },
-        swfPath: "js/jPlayer",
-        supplied: "webmv, ogv, m4v, oga, mp3",
-        smoothPlayBar: true,
-        keyEnabled: true,
-        audioFullScreen: false,
-        play: function(e) {
-            var span = document.getElementById('song-img');
-            span.innerHTML = '';
-            span.innerHTML = span.innerHTML + '' +
-                '<img src="' + $img_player + '" class="dker" alt="...">';
-        }
-    });
+    if(myPlaylist == undefined) {
+        myPlaylist = new jPlayerPlaylist({
+            jPlayer: "#jplayer_N",
+            cssSelectorAncestor: "#jp_container_N"
+        }, $playlist, {
+            playlistOptions: {
+                enableRemoveControls: true,
+                autoPlay: true
+            },
+            swfPath: "js/jPlayer",
+            supplied: "webmv, ogv, m4v, oga, mp3",
+            smoothPlayBar: true,
+            keyEnabled: true,
+            audioFullScreen: false,
+            play: function (e) {
+                var span = document.getElementById('song-img');
+                span.innerHTML = '';
+                span.innerHTML = span.innerHTML + '' +
+                    '<img src="' + $img_player + '" class="dker" alt="...">';
+            }
+        });
+    }
     $img_player = $img;
     if(myPlaylist.playlist.length == 0) {
         myPlaylist = new jPlayerPlaylist({
