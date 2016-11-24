@@ -18,9 +18,16 @@
                                     class="font-bold">All Songs</span> </a></li>
                         <li><a href="upload.php"> <i class="icon-music-tone-alt icon text-info"></i> <span
                                     class="font-bold">Upload</span> </a></li>
+<<<<<<< HEAD
                         <li><a href="add-playlist.php"> <i class="icon-drawer icon text-primary-lter"></i> <b
                                     class="badge bg-primary pull-right">6</b> <span
                                     class="font-bold">Playlist</span> </a></li>
+=======
+                        <li><a class ="clickabe"> <i class="icon-drawer icon text-primary-lter"></i> <b
+                                    class="badge bg-primary pull-right">6</b> <span
+                                    class="font-bold">Discover</span> </a></li>
+
+>>>>>>> 136a7c178fbc695a6ab47ad5344fbdb8e533dc93
                         <li><a href="listen.html"> <i class="icon-list icon text-info-dker"></i> <span
                                     class="font-bold">Listen</span> </a></li>
                         <li><a href="" data-target="#content" data-el="#bjax-el"
