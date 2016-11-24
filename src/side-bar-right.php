@@ -12,7 +12,6 @@
         <section class="w-f-md scrollable hover"><h4 class="font-thin m-l-md m-t">Connected</h4>
             <ul class="list-group no-bg no-borders auto m-t-n-xxs" id="side-bar-content">
 
-
             </ul>
         </section>
         <footer class="footer footer-md bg-black">

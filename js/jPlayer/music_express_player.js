@@ -51,6 +51,8 @@ function addSong($title, $artist, $img, $url) {
 
         var div = document.getElementById('side-bar-content');
 
+        console.log(myPlaylist.playlist);
+
         div.innerHTML = div.innerHTML +'' +
             '<a class ="clickabe" onclick="' + "play_song(" + $i++ + ")" + '" src="' + $img + '">'
             '<li class="list-group-item">' +

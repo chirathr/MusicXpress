@@ -64,12 +64,12 @@
                                                                                class="r r-2x img-full"></a></div>
                                                 <div class="padder-v"><a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"class="text-ellipsis">' . substr($row[1], 0, 10) .'
                                                 </a> <a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"
-                                                                    class="text-ellipsis text-xs text-muted">' . substr($row[2], 0 ,8) . '</a>
+                                                                    class="text-ellipsis text-xs text-muted">' . substr($row[2], 0 ,5) . '</a>
                                                 </div>
                                             </div>
                                         </div>';
                                         $i++;
-                                        if($i>7) {
+                                        if($i>20) {
                                             break;
                                         }
                           }
