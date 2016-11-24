@@ -175,7 +175,12 @@
 
 <script>
     function showSongs() {
-        var discover = document.getElementsByClassName();
+        var discover = document.getElementById("discover");
         discover.style.display = 'none';
+
+        var top_songs = document.getElementById("top_songs");
+        top_songs.style.display = 'none';
+
+        document.getElementById("new-songs").className = "col-md-12";
     }
 </script>

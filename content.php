@@ -22,7 +22,7 @@
 
 
 
-        <div class="row row-sm">
+        <div class="row row-sm" id="discover">
         <!--  Discover  -->
 
 
@@ -37,7 +37,7 @@
 
             <!-- New songs sections -->
 
-            <div class="col-md-7"><h3 class="font-thin">New Songs</h3>
+            <div class="col-md-7" id="new-songs"><h3 class="font-thin">New Songs</h3>
                 <div class="row row-sm">
 
                     <?php
@@ -74,13 +74,12 @@
                                         }
                           }
                          ?>
-
                 </div>
             </div>
 
             <!-- Top songs section -->
-            <div class="col-md-5"><h3 class="font-thin">Top Songs</h3>
-                <div class="list-group bg-white list-group-lg no-bg auto">
+            <div class="col-md-5" id="top_songs" style="display: none"><h3 class="font-thin">Top Songs</h3>
+                <div  class="list-group bg-white list-group-lg no-bg auto">
 
                     <?php
                     include("src/db-connect.php");
