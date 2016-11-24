@@ -57,19 +57,19 @@
                                                 <div class="pos-rlt">
                                                     <div class="item-overlay opacity r r-2x bg-black">
                                                         <div class="center text-center m-t-n"><a 
-                                                        onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"><i
+                                                        class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"><i
                                                                     class="fa fa-play-circle i-2x"></i></a></div>
                                                     </div>
-                                                    <a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"><img src="' . $img . '" alt=""
+                                                    <a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"><img src="' . $img . '" alt=""
                                                                                class="r r-2x img-full"></a></div>
-                                                <div class="padder-v"><a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"class="text-ellipsis">' . $row[1] .'
-                                                </a> <a onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"
-                                                                    class="text-ellipsis text-xs text-muted">' . $row[2] . '</a>
+                                                <div class="padder-v"><a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"class="text-ellipsis">' . substr($row[1], 0, 10) .'
+                                                </a> <a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"
+                                                                    class="text-ellipsis text-xs text-muted">' . substr($row[2], 0 ,8) . '</a>
                                                 </div>
                                             </div>
                                         </div>';
                                         $i++;
-                                        if($i>9) {
+                                        if($i>7) {
                                             break;
                                         }
                           }
@@ -78,7 +78,7 @@
             </div>
 
             <!-- Top songs section -->
-            <div class="col-md-5" id="top_songs" style="display: none"><h3 class="font-thin">Top Songs</h3>
+            <div class="col-md-5" id="top_songs"><h3 class="font-thin">Top Songs</h3>
                 <div  class="list-group bg-white list-group-lg no-bg auto">
 
                     <?php

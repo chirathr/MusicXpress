@@ -51,17 +51,19 @@ function addSong($title, $artist, $img, $url) {
 
         var div = document.getElementById('side-bar-content');
 
-        div.innerHTML = div.innerHTML +
+        div.innerHTML = div.innerHTML +'' +
+            '<a class ="clickabe" onclick="' + "play_song(" + $i++ + ")" + '" src="' + $img + '">'
             '<li class="list-group-item">' +
             '<span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">' +
-            '<img src="' + $img + '" alt="..." class="img-circle">' +
+            '<img  src="' + $img + '" alt="..." class="img-circle">' +
             '<i class="on b-light right sm"></i>' +
             '</span>' +
             '<div class="clear">' +
-            '<div><a onclick="' + "play_song(" + $i++ + ")" + '">' + $title + '</a></div>' +
+            '<div><a class ="clickabe" onclick="' + "play_song(" + $i++ + ")" + '">' + $title + '</a></div>' +
             '<small class="text-muted">' + $artist + '</small>' +
             '</div>' +
-            '</li>'
+            '</li>' +
+            '</a>'
         ;
     }
 }

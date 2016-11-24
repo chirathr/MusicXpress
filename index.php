@@ -6,6 +6,11 @@
         session_start();
     }
     include("src/static-includes.php"); ?>
+    <style>
+        .clickabe {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="">
 <section class="vbox">
