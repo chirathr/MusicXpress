@@ -64,12 +64,12 @@
                                                                                class="r r-2x img-full"></a></div>
                                                 <div class="padder-v"><a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"class="text-ellipsis">' . substr($row[1], 0, 10) .'
                                                 </a> <a class ="clickabe" onclick="' . "addSong('" . $row[1] . "', '" . $row[2] . "' ,'" . $img . "', '" . $row[5] . "')" . '"
-                                                                    class="text-ellipsis text-xs text-muted">' . $row[2] . '</a>
+                                                                    class="text-ellipsis text-xs text-muted">' . substr($row[2], 0 ,8) . '</a>
                                                 </div>
                                             </div>
                                         </div>';
                                         $i++;
-                                        if($i>9) {
+                                        if($i>7) {
                                             break;
                                         }
                           }
@@ -78,7 +78,7 @@
             </div>
 
             <!-- Top songs section -->
-            <div class="col-md-5" id="top_songs" style="display: none"><h3 class="font-thin">Top Songs</h3>
+            <div class="col-md-5" id="top_songs"><h3 class="font-thin">Top Songs</h3>
                 <div  class="list-group bg-white list-group-lg no-bg auto">
 
                     <?php
