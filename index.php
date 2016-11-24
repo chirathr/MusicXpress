@@ -39,5 +39,12 @@
 <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
 <script type="text/javascript" src="js/jPlayer/music_express_player.js"></script>
+<?php
+            $query = "SELECT name, artistname, songart, filepath FROM songs where id in (select songid from playlistsongs where playlistid =" .$_GET['playlistid'] .")";
+            $q = pg_query($conn, $query);
+            while($r = pg_fetch_row($q)){
+                echo '<script>'. "addSong('" . $r[0] . "', '" . $r[1] . "' ,'" . $r[2] . "', '" . $r[3] . "');" ."</script>";
+            }
+?>
 </body>
 </html>

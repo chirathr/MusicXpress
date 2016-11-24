@@ -32,7 +32,6 @@
         </div>
 
 
-
         <div class="row">
 
             <!-- New songs sections -->
