@@ -38,11 +38,11 @@
                                 notifications</strong></div>
                         <div class="list-group list-group-alt"><a href="index.html#" class="media list-group-item">
                                 <span class="pull-left thumb-sm"> <img src="images/a0.png" alt="..." class="img-circle"> </span>
-                                <span class="media-body block m-b-none"> Use awesome animate.css<br> <small
+                                <span class="media-body block m-b-none"> 2 songs added to playlist<br> <small
                                         class="text-muted">10 minutes ago</small> </span> </a> <a href="index.html#"
                                                                                                   class="media list-group-item">
-                                <span class="media-body block m-b-none"> 1.0 initial released<br> <small
-                                        class="text-muted">1 hour ago</small> </span> </a></div>
+                                <span class="media-body block m-b-none"> 3 New album releases<br> <small
+                                        class="text-muted">30 minutes ago</small> </span> </a></div>
                         <div class="panel-footer text-sm"><a href="index.html#" class="pull-right"><i
                                     class="fa fa-cog"></i></a> <a href="index.html#notes"
                                                                   data-toggle="class:show animated fadeInRight">See all
