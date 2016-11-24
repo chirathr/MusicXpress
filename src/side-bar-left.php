@@ -18,16 +18,12 @@
                                     class="font-bold">All Songs</span> </a></li>
                         <li><a href="upload.php"> <i class="icon-music-tone-alt icon text-info"></i> <span
                                     class="font-bold">Upload</span> </a></li>
-<<<<<<< HEAD
-                        <li><a href="add-playlist.php"> <i class="icon-drawer icon text-primary-lter"></i> <b
-                                    class="badge bg-primary pull-right">6</b> <span
-                                    class="font-bold">Playlist</span> </a></li>
-=======
+
                         <li><a class ="clickabe"> <i class="icon-drawer icon text-primary-lter"></i> <b
                                     class="badge bg-primary pull-right">6</b> <span
                                     class="font-bold">Discover</span> </a></li>
 
->>>>>>> 136a7c178fbc695a6ab47ad5344fbdb8e533dc93
+
                         <li><a href="listen.html"> <i class="icon-list icon text-info-dker"></i> <span
                                     class="font-bold">Listen</span> </a></li>
                         <li><a href="" data-target="#content" data-el="#bjax-el"
@@ -116,17 +112,31 @@
                                         class="fa fa-angle-down text-active"></i> </span> <i
                                     class="icon-grid icon"> </i> <span>Pages</span> </a>
                             <ul class="nav dk text-sm">
-                                <li><a href="login.php" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>SignIn</span> </a>
-                                </li>
+                                <?php
+                        if(!isset($username)) {
+                              echo '  <li><a href="login.php" class="auto"> <i
+                                            class="fa fa-angle-right text-xs"></i> <span>Login</span> </a>
+                                </li> 
+                        
                                 <li><a href="register.php" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Signup</span> </a></li>
-                                <li><a href="add-playlist.php" class="auto"> <i
+                                            class="fa fa-angle-right text-xs"></i> <span>Signup</span> </a></li> ';
+                                        }
+
+                           else { 
+                                        
+                              echo '   <li><a href="add-playlist.php" class="auto"> <i
                                             class="fa fa-angle-right text-xs"></i> <span>Playlist</span> </a>
                                 </li>
                                 <li><a href="upload.php" class="auto"> <i
                                             class="fa fa-angle-right text-xs"></i> <span>Upload</span> </a>
-                                </li>
+                                </li> 
+                                <li><a href="./login.php?logout=set" class="auto"> <i
+                                            class="fa fa-angle-right text-xs"></i> <span>Logout</span> </a>
+                                </li>';
+
+                                }
+                            ?>
+
                 
                             </ul>
                         </li>
