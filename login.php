@@ -78,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
 				<br/>
 				<button type="submit">Sign In</button>
 				<br/>
-				<a href="#"><p class="small">Forgot your password?</p></a>
+				<a href="register.php#"><p class="small">Signup for free</p></a>
 			</div>
 		</form>
 	</div>';

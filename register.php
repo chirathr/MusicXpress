@@ -61,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
 		<form action="register.php" method="POST">
 			<div class="login-box animated fadeInUp">
 				<div class="box-header">
-					<h2>SignUp In</h2>
+					<h2>Sign Up</h2>
 				</div>
 				<label for="fullname">Full Name</label>
 				<br/>
@@ -81,7 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && !isset($username)) {
 				<br/>
 				<button type="submit">Sign In</button>
 				<br/>
-				<a href="#"><p class="small">Forgot your password?</p></a>
+				<a href="login.php#"><p class="small">Alredy a user? Signin</p></a>
 			</div>
 		</form>
 	</div>';
