@@ -18,14 +18,14 @@
                                     class="font-bold">All Songs</span> </a></li>
                         <li><a href="upload.php"> <i class="icon-music-tone-alt icon text-info"></i> <span
                                     class="font-bold">Upload</span> </a></li>
-                        <li><a href="events.html"> <i class="icon-drawer icon text-primary-lter"></i> <b
+                        <li><a href="add-playlist.php"> <i class="icon-drawer icon text-primary-lter"></i> <b
                                     class="badge bg-primary pull-right">6</b> <span
-                                    class="font-bold">Events</span> </a></li>
+                                    class="font-bold">Playlist</span> </a></li>
                         <li><a href="listen.html"> <i class="icon-list icon text-info-dker"></i> <span
                                     class="font-bold">Listen</span> </a></li>
                         <li><a href="video.html" data-target="#content" data-el="#bjax-el"
                                data-replace="true"> <i class="icon-social-youtube icon text-primary"></i>
-                                <span class="font-bold">Video</span> </a></li>
+                                <span class="font-bold">Play</span> </a></li>
                         <li class="m-b hidden-nav-xs"></li>
                     </ul>
                     <ul class="nav" data-ride="collapse">
