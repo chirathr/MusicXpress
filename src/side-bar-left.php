@@ -14,17 +14,23 @@
                 <nav class="nav-primary hidden-xs">
                     <ul class="nav bg clearfix">
                         <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted"> Discover</li>
-                        <li><a class ="clickabe" onclick="showSongs();"> <i class="icon-disc icon text-success"></i> <span
+                        <li><a onclick="showSongs();"> <i class="icon-disc icon text-success"></i> <span
                                     class="font-bold">All Songs</span> </a></li>
                         <li><a href="upload.php"> <i class="icon-music-tone-alt icon text-info"></i> <span
                                     class="font-bold">Upload</span> </a></li>
+<<<<<<< HEAD
+                        <li><a href="add-playlist.php"> <i class="icon-drawer icon text-primary-lter"></i> <b
+                                    class="badge bg-primary pull-right">6</b> <span
+                                    class="font-bold">Playlist</span> </a></li>
+=======
                         <li><a class ="clickabe"> <i class="icon-drawer icon text-primary-lter"></i> <b
                                     class="badge bg-primary pull-right">6</b> <span
                                     class="font-bold">Discover</span> </a></li>
 
+>>>>>>> 136a7c178fbc695a6ab47ad5344fbdb8e533dc93
                         <li><a href="listen.html"> <i class="icon-list icon text-info-dker"></i> <span
                                     class="font-bold">Listen</span> </a></li>
-                        <li><a href="video.html" data-target="#content" data-el="#bjax-el"
+                        <li><a href="" data-target="#content" data-el="#bjax-el"
                                data-replace="true"> <i class="icon-social-youtube icon text-primary"></i>
                                 <span class="font-bold">Play</span> </a></li>
                         <li class="m-b hidden-nav-xs"></li>
@@ -110,26 +116,18 @@
                                         class="fa fa-angle-down text-active"></i> </span> <i
                                     class="icon-grid icon"> </i> <span>Pages</span> </a>
                             <ul class="nav dk text-sm">
-                                <li><a href="profile.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Profile</span> </a>
+                                <li><a href="login.php" class="auto"> <i
+                                            class="fa fa-angle-right text-xs"></i> <span>SignIn</span> </a>
                                 </li>
-                                <li><a href="blog.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Blog</span> </a></li>
-                                <li><a href="invoice.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Invoice</span> </a>
-                                </li>
-                                <li><a href="gmap.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Google Map</span> </a>
-                                </li>
-                                <li><a href="jvectormap.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Vector Map</span> </a>
-                                </li>
-                                <li><a href="signin.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Signin</span> </a></li>
-                                <li><a href="signup.html" class="auto"> <i
+                                <li><a href="register.php" class="auto"> <i
                                             class="fa fa-angle-right text-xs"></i> <span>Signup</span> </a></li>
-                                <li><a href="404.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>404</span> </a></li>
+                                <li><a href="add-playlist.php" class="auto"> <i
+                                            class="fa fa-angle-right text-xs"></i> <span>Playlist</span> </a>
+                                </li>
+                                <li><a href="upload.php" class="auto"> <i
+                                            class="fa fa-angle-right text-xs"></i> <span>Upload</span> </a>
+                                </li>
+                
                             </ul>
                         </li>
                     </ul>
@@ -183,13 +181,5 @@
         top_songs.style.display = 'none';
 
         document.getElementById("new-songs").className = "col-md-12";
-    }
-
-    function discover() {
-        var discover = document.getElementById("top_songs");
-        discover.style.display = 'none';
-
-        var top_songs = document.getElementById("new-songs");
-        top_songs.style.display = 'none';
     }
 </script>
