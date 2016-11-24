@@ -38,28 +38,28 @@
 				$filepath = $ro[1];
 				$imagepath = $ro[2];
 				echo '<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="item">
-                    <div class="pos-rlt">
-                        <div class="bottom"><span
-                                class="badge bg-info m-l-sm m-b-sm"></span></div>
-                        <div class="item-overlay opacity r r-2x bg-black">
-                            <div class="text-info padder m-t-sm text-sm"><i
-                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                    class="fa fa-star-o text-muted"></i></div>
-                            <div class="center text-center m-t-n"><a href="index.html#"><i
-                                        class="icon-control-play i-2x"></i></a></div>
-                            <div class="bottom padder m-b-sm"><a href="index.html#"
-                                                                 class="pull-right"> <i
-                                        class="fa fa-heart-o"></i> </a> <a href="index.html#"> <i
-                                        class="fa fa-plus-circle"></i> </a></div>
-                        </div>
-                        <a href="index.html#"><img src="' . $imagepath . '" alt=""
-                                                   class="r r-2x img-full"></a></div>
-                    <div class="padder-v"><a href="index.html#" class="text-ellipsis">' . $playlist_name . '</a> <a href="index.html#" class="text-ellipsis text-xs text-muted">Miaow</a>
-                    </div>
-                </div>
-            </div>';
+	                <div class="item">
+	                    <div class="pos-rlt">
+	                        <div class="bottom"><span
+	                                class="badge bg-info m-l-sm m-b-sm"></span></div>
+	                        <div class="item-overlay opacity r r-2x bg-black"  href="index.php?playlistid=' .$row[0] .'">
+	                            <div class="text-info padder m-t-sm text-sm"><i
+	                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+	                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+	                                    class="fa fa-star-o text-muted"></i></div>
+	                            <div class="center text-center m-t-n" ><a  href="index.php?playlistid=' .$row[0] .'"><i
+	                                        class="icon-control-play i-2x"></i></a></div>
+	                            <div class="bottom padder m-b-sm"><a  href="index.php?playlistid=' .$row[0] .'"	
+	                                                                 class="pull-right"> <i
+	                                        class="fa fa-heart-o"></i> </a> <a  href="index.php?playlistid=' .$row[0] .'"> <i
+	                                        class="fa fa-plus-circle"></i> </a></div>
+	                        </div>
+	                        <a  href="index.php?playlistid=' .$row[0] .'"><img src="'.$imagepath .'" alt=""
+	                                                   class="r r-2x img-full"></a></div>
+	                    <div class="padder-v"><a  href="index.php?playlistid=' .$row[0] .'" class="text-ellipsis">' .$playlist_name .'</a> <a  href="index.php?playlistid=' .$row[0] .'" class="text-ellipsis text-xs text-muted">Miaow</a>
+	                    </div>
+	                </div>
+	            </div>';
 				break;
 			}
 		}
