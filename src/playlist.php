@@ -21,7 +21,6 @@
 			exit;
 		}
 		while ($row = pg_fetch_row($result)) {
-			echo $row[0];
 
 			$query = "SELECT name from playlists where id = '$row[0]'";
 			$res = pg_query($conn, $query);
@@ -56,7 +55,7 @@
 	                        </div>
 	                        <a  href="index.php?playlistid=' .$row[0] .'"><img src="'.$imagepath .'" alt=""
 	                                                   class="r r-2x img-full"></a></div>
-	                    <div class="padder-v"><a  href="index.php?playlistid=' .$row[0] .'" class="text-ellipsis">' .$playlist_name .'</a> <a  href="index.php?playlistid=' .$row[0] .'" class="text-ellipsis text-xs text-muted">Miaow</a>
+	                    <div class="padder-v"><a  href="index.php?playlistid=' .$row[0] .'" class="text-ellipsis">' .$playlist_name .'</a> <a  href="index.php?playlistid=' .$row[0] .'" class="text-ellipsis text-xs text-muted"></a>
 	                    </div>
 	                </div>
 	            </div>';

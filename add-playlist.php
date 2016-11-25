@@ -94,7 +94,13 @@ if(session_id() == '') {
         echo "Please log in";
     }
     ?>
+
 </div>
+<script src="js/app.v1.js"></script>
+<script src="js/app.plugin.js"></script>
+<script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="js/jPlayer/music_express_player.js"></script>
 </body>
 </html>
 

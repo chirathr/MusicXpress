@@ -33,80 +33,8 @@
                     </ul>
                     <ul class="nav" data-ride="collapse">
                         <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted"> Interface</li>
-                        <li><a href="index.html#" class="auto"> <span class="pull-right text-muted"> <i
-                                        class="fa fa-angle-left text"></i> <i
-                                        class="fa fa-angle-down text-active"></i> </span> <i
-                                    class="icon-screen-desktop icon"> </i> <span>Layouts</span> </a>
-                            <ul class="nav dk text-sm">
-                                <li><a href="layout-color.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Color option</span>
-                                    </a></li>
-                                <li><a href="layout-boxed.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Boxed layout</span>
-                                    </a></li>
-                                <li><a href="layout-fluid.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Fluid layout</span>
-                                    </a></li>
-                            </ul>
-                        </li>
-                        <li><a href="index.html#" class="auto"> <span class="pull-right text-muted"> <i
-                                        class="fa fa-angle-left text"></i> <i
-                                        class="fa fa-angle-down text-active"></i> </span> <i
-                                    class="icon-chemistry icon"> </i> <span>UI Kit</span> </a>
-                            <ul class="nav dk text-sm">
-                                <li><a href="buttons.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Buttons</span> </a>
-                                </li>
-                                <li><a href="icons.html" class="auto"> <b class="badge bg-info pull-right">369</b>
-                                        <i class="fa fa-angle-right text-xs"></i> <span>Icons</span> </a></li>
-                                <li><a href="grid.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Grid</span> </a></li>
-                                <li><a href="widgets.html" class="auto"> <b
-                                            class="badge bg-dark pull-right">8</b> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Widgets</span> </a>
-                                </li>
-                                <li><a href="components.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Components</span> </a>
-                                </li>
-                                <li><a href="list.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>List group</span> </a>
-                                </li>
-                                <li><a href="index.html#table" class="auto"> <span
-                                            class="pull-right text-muted"> <i class="fa fa-angle-left text"></i> <i
-                                                class="fa fa-angle-down text-active"></i> </span> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Table</span> </a>
-                                    <ul class="nav dker">
-                                        <li><a href="table-static.html"> <i class="fa fa-angle-right"></i>
-                                                <span>Table static</span> </a></li>
-                                        <li><a href="table-datatable.html"> <i
-                                                    class="fa fa-angle-right"></i> <span>Datatable</span> </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="index.html#form" class="auto"> <span
-                                            class="pull-right text-muted"> <i class="fa fa-angle-left text"></i> <i
-                                                class="fa fa-angle-down text-active"></i> </span> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Form</span> </a>
-                                    <ul class="nav dker">
-                                        <li><a href="form-elements.html"> <i class="fa fa-angle-right"></i>
-                                                <span>Form elements</span> </a></li>
-                                        <li><a href="form-validation.html"> <i
-                                                    class="fa fa-angle-right"></i> <span>Form validation</span>
-                                            </a></li>
-                                        <li><a href="form-wizard.html"> <i class="fa fa-angle-right"></i>
-                                                <span>Form wizard</span> </a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="chart.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Chart</span> </a></li>
-                                <li><a href="portlet.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Portlet</span> </a>
-                                </li>
-                                <li><a href="timeline.html" class="auto"> <i
-                                            class="fa fa-angle-right text-xs"></i> <span>Timeline</span> </a>
-                                </li>
-                            </ul>
-                        </li>
+                        
+
                         <li><a href="index.html#" class="auto"> <span class="pull-right text-muted"> <i
                                         class="fa fa-angle-left text"></i> <i
                                         class="fa fa-angle-down text-active"></i> </span> <i
